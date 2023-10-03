@@ -1,0 +1,23 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+client/web-harvest-app/node_modules
+client/web-harvest-app/.pnp
+client/web-harvest-app/.pnp.js
+
+# testing
+client/web-harvest-app/coverage
+
+# production
+client/web-harvest-app/build
+
+# misc
+client/web-harvest-app/.DS_Store
+client/web-harvest-app/.env.local
+client/web-harvest-app/.env.development.local
+client/web-harvest-app/.env.test.local
+client/web-harvest-app/.env.production.local
+
+client/web-harvest-app/npm-debug.log*
+client/web-harvest-app/yarn-debug.log*
+client/web-harvest-app/yarn-error.log*
