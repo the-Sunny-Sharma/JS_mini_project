@@ -1,7 +1,7 @@
 import '../styles/home.css';
 import Navbar from '../components/Navbar';
 
-function Home(){
+export default function Home(){
     return(
         <>
             <Navbar />
@@ -9,5 +9,3 @@ function Home(){
         </>
     );
 }
-
-export default Home;

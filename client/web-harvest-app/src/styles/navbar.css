@@ -1,3 +1,46 @@
-.nav {
-    background-color: aqua;
+.nav-bar {
+    padding: 10px;
+    background-color: #4AC37A;
+    width: 100%;
+}
+
+.logo {
+    background-image: url(../assets/logo.png);
+    display: inline-block;
+    background-size: cover;
+    vertical-align: top;
+    width: 50px;
+    height: 50px;
+}
+
+.title {
+    font-size: 1.4em;
+    color: white;
+    display: inline;
+    margin-top: 20px;
+}
+
+.center-nav {
+    text-align: center;
+}
+
+.link {
+    color: white;
+    font-size: 1em;
+    text-decoration: none;
+    margin: 3.5%;
+    font-weight: 500;
+}
+
+ul {
+    list-style-type: none;
+    display: inline;
+}
+
+ul li {
+    display: inline;
+}
+
+ul li a:hover {
+    color: hwb(143 17% 56%);
 }
