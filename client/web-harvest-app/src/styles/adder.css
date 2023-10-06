@@ -1,0 +1,25 @@
+.btn {
+  background-color: #dc3545;
+  color: #fff;
+  font-size: 1.3rem;
+  width: 35px;
+}
+
+.num {
+  display: inline;
+}
+
+.container-add {
+  display: flex;
+  align-items: center;
+  width: 50%;
+  margin: auto;
+}
+
+.btn {
+  margin: 0 5px;
+}
+
+.num {
+  margin: 0;
+}
