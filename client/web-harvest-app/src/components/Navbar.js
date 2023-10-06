@@ -53,8 +53,10 @@ function Navbar() {
                   </Link>
                 )}
               </li>
+              <li>{(un != null) && (<Link to='/changepass' className="link">ChangePassword</Link>)}</li>
             </ul>
           </div>
+
         </div>
         <div className="cart-svg">
           <svg
