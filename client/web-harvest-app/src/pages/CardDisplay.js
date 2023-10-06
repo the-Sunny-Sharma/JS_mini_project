@@ -21,7 +21,7 @@ export default function CardDisplay() {
          <Card
           imgSrc="https://d1sl07a7h3d3fr.cloudfront.net/common/master/farmeros_38.jpg"
           imgAlt="Card Image 3"
-          title="Potato"
+          title="Spinach"
           qty="250 gm Bunch"
           amt="&#8377; 20.00"
         />
