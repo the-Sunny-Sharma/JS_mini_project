@@ -13,6 +13,7 @@ import ChangePass from './pages/ChangePass';
 import './styles/app.css';
 import app from './components/Firebase';
 import Logout from './pages/Logout';
+import Forgotpass from './pages/Forgotpass';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
         <Route path='/login' element={<Login/>}/>
         <Route path='/logout' element={<Logout />} />
         <Route path='/changepass' element={<ChangePass />} />
+        <Route path='/forgotpass' element={<Forgotpass />} />
         <Route path='*' element={<Page404/>}/>
       </Routes>
       

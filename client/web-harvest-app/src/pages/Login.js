@@ -2,7 +2,7 @@ import '../styles/login.css';
 import  { useState, useRef, useEffect } from 'react';
 import app from '../components/Firebase';
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 
 export default function Login() {
@@ -17,7 +17,7 @@ export default function Login() {
     const rEmail = useRef();
     const [email, setEmail] = useState('');
     const [pw, setPw] = useState('');
-    const [msg, setMsg] = useState('');
+
 
     const hEmail = (event) => {setEmail(event.target.value);}
     const hPw    = (event) => {setPw   (event.target.value);}
@@ -30,7 +30,7 @@ export default function Login() {
             localStorage.setItem("un",email);
             navigate('/');
         })
-        .catch(err => setMsg ("issue "+err));
+        .catch(err => alert ("issue "+err));
     }
     return(
         <>
@@ -43,7 +43,7 @@ export default function Login() {
                 onChange={hPw} value={pw} />
                 <input type='submit' value='Login' />
             </form>
-            <h1>{msg}</h1>
+            <Link to="/forgotpass">Forgot Password?</Link>
         </>
     );
 }
