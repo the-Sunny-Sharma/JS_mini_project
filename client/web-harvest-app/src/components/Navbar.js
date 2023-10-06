@@ -19,6 +19,7 @@ function Navbar(){
                         <li>{(un == null) && (<Link to='/login' className="link">Login</Link>)}</li>
                         <li>{(un == null) && (<Link to='/signup' className="link">Sign Up</Link>)}</li>
                         <li>{(un != null) && (<Link to='/logout' className="link">Logout</Link>)}</li>
+                        <li>{(un != null) && (<Link to='/changepass' className="link">ChangePassword</Link>)}</li>
                     </ul>
                 </div>
             </div>

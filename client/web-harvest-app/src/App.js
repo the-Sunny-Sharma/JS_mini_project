@@ -9,6 +9,7 @@ import Setting from './pages/Setting';
 import Login from './pages/Login';
 import SignUp from './pages/SignUp';
 import Page404 from './pages/Page404';
+import ChangePass from './pages/ChangePass';
 import './styles/app.css';
 import app from './components/Firebase';
 import Logout from './pages/Logout';
@@ -26,6 +27,7 @@ function App() {
         <Route path='/signup' element={<SignUp />}/>
         <Route path='/login' element={<Login/>}/>
         <Route path='/logout' element={<Logout />} />
+        <Route path='/changepass' element={<ChangePass />} />
         <Route path='*' element={<Page404/>}/>
       </Routes>
       
