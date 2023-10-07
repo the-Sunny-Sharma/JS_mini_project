@@ -1,0 +1,46 @@
+.user-out--container {
+    background-image: url(../assets/realbglog.jpeg);
+    background-size: cover;
+    background-attachment: fixed;
+    height: 100vh; 
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.l-form-logout {
+    padding: 20px;
+    border-radius: 25px;
+    width: 50%; 
+    height: 200px; 
+    margin: 0 auto;
+    background-image: linear-gradient(to right, #4aa124, #0c8b67);
+    text-align: center;
+    opacity: 0.7;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow-y: auto;
+    padding: 20px;
+}
+
+.btn-yes {
+    background-color: #dc3545;
+    border: none;
+    padding: 5px;
+    display: block;
+    margin: auto;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.home-a {
+    text-decoration: none;
+    font-weight: 700;
+    color: white;
+    background-color: rgb(83, 83, 248);
+    padding: 10px;
+}
