@@ -13,6 +13,7 @@ import app from './components/Firebase';
 import Logout from './pages/Logout';
 import CardDisplay from './pages/CardDisplay';
 import Forgotpass from './pages/Forgotpass';
+import Products from './pages/Products';
 
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
         <Route path='/carddisplay' element={<CardDisplay />} />
         <Route path='/changepass' element={<ChangePass />} />
         <Route path='/forgotpass' element={<Forgotpass />} />
+        <Route path='/products' element={<Products />} />
         <Route path='*' element={<Page404/>}/>
       </Routes>
       

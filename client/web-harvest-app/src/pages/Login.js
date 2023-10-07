@@ -17,10 +17,12 @@ export default function Login() {
     const rEmail = useRef();
     const [email, setEmail] = useState('');
     const [pw, setPw] = useState('');
+    const [ctg,setCtg]=useState("customer");
 
 
     const hEmail = (event) => {setEmail(event.target.value);}
     const hPw    = (event) => {setPw   (event.target.value);}
+    const hCtg =(event)=>{ setCtg(event.target.value); }
 
     const check = (event) => {
         event.preventDefault(); 
@@ -28,6 +30,7 @@ export default function Login() {
         signInWithEmailAndPassword(auth, email, pw)
         .then(res => {
             localStorage.setItem("un",email);
+            localStorage.setItem("ctg",ctg);
             navigate('/');
         })
         .catch(err => alert ("issue "+err));
@@ -39,15 +42,19 @@ export default function Login() {
             <div class="main-div">
                 
              <div class="l-form-login"> <form onSubmit={check}>
+             <input type="radio" name="ctg" value="customer" onChange={hCtg} checked={ ctg==="customer"}/><label className='lbl'>Customer</label>
+                <input type="radio" name="ctg" value="farmer" onChange={hCtg}/><label className='lbl'>Farmer</label>
                 <div class="e-email">
                     <input className='txt-in' type='email' placeholder='Enter your email'
                     onChange={hEmail} value={email} ref={rEmail} />
                 </div>
+                
                 <div class="pass">
                  <input className='txt-in' type='password' placeholder='Enter the password'
                     onChange={hPw} value={pw} />
                 </div>
                 <Link to="/forgotpass" className='forgot-pass'>Forgot Password?</Link>
+
                 <div class="loginbtn">
                     <input className='txt-in btn-login' type='submit' value='Login' />
                 </div>
