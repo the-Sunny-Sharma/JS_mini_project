@@ -41,7 +41,9 @@ export default function Login() {
             <Navbar />
             <div class="main-div">
                 
-             <div class="l-form-login"> <form onSubmit={check}>
+             <div class="l-form-login">
+             <h1 className='wel'>Welcome Again!!</h1>
+                 <form onSubmit={check}>
              <input type="radio" name="ctg" value="customer" onChange={hCtg} checked={ ctg==="customer"}/><label className='lbl'>Customer</label>
                 <input type="radio" name="ctg" value="farmer" onChange={hCtg}/><label className='lbl'>Farmer</label>
                 <div class="e-email">
