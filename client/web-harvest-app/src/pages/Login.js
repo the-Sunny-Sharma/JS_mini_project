@@ -37,21 +37,19 @@ export default function Login() {
             
             <Navbar />
             <div class="main-div">
-                <div class="h1">
-                    
-                </div>
-             <div class="l-form"> <form onSubmit={check}>
+                
+             <div class="l-form-login"> <form onSubmit={check}>
                 <div class="e-email">
-                    <input type='email' placeholder='Enter your email'
+                    <input className='txt-in' type='email' placeholder='Enter your email'
                     onChange={hEmail} value={email} ref={rEmail} />
                 </div>
                 <div class="pass">
-                 <input type='password' placeholder='Enter the password'
+                 <input className='txt-in' type='password' placeholder='Enter the password'
                     onChange={hPw} value={pw} />
                 </div>
-                <Link to="/forgotpass">Forgot Password?</Link>
+                <Link to="/forgotpass" className='forgot-pass'>Forgot Password?</Link>
                 <div class="loginbtn">
-                    <input type='submit' value='Login' />
+                    <input className='txt-in btn-login' type='submit' value='Login' />
                 </div>
                      </form>
              </div>
