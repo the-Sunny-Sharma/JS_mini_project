@@ -46,16 +46,23 @@ export default function ChangePass(){
         <>
         <center>
         <Navbar/>
-        <h1>Hii { un }</h1>
-        <br/>
-        <form onSubmit={ changepass }>
-            <input type="password" placeholder="Enter New Password" onChange={hPw1} value={pw1} ref={rPw1}/>
-            <br/><br/>
-            <input type="password" placeholder="Confirm New Password" onChange={hPw2} value={pw2}/>
-            <br/><br/>
-            <input type="submit" value="Change"/>
-        </form>
+        <div clas="main-div">
+            <div class="h1">
+                <h1 >Hii { un }</h1>
+            </div>
+            <br/>
+            <div class="main-f">
+                <form onSubmit={ changepass }>
+                    <input type="password" placeholder="Enter New Password" onChange={hPw1} value={pw1} ref={rPw1}/>
+                    <br/><br/>
+                    <input type="password" placeholder="Confirm New Password" onChange={hPw2} value={pw2}/>
+                    <br/><br/>
+                    <input type="submit" value="Change"/>
+                </form>
+            </div>
+        </div>
         </center>
+        
         </>
     );
 }

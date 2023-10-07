@@ -7,11 +7,10 @@ body {
 
 
 .l-form {
-    padding: 20px;
+    padding: 20;
     border-radius: 25px;
-    width: 20%; 
-    height: 200px; 
-    margin: 0 auto;
+    width: 30%; 
+    margin: 0 auto; 
     background-image: linear-gradient(to right, #4aa124, #0c8b67);
     text-align: center;
     opacity: 0.7;
@@ -19,22 +18,26 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    height: 330px;
 }
-
 .e-email{
-    padding: 35px;
+    padding: 30px;
    
 }
 .pass{
-    padding: 35px;
+    padding: 30px;
+}
+.c-pass{
+    padding: 30px;
 }
 .loginbtn{
-    padding: 25px;
+    padding: 20px;
 }
 
 @media screen and (max-width: 800px) {
     .l-form {
         width: 80%;
+        height: 40%;
     }
 }
 
