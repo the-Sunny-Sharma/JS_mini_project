@@ -17,10 +17,12 @@ export default function Login() {
     const rEmail = useRef();
     const [email, setEmail] = useState('');
     const [pw, setPw] = useState('');
+    const [ctg,setCtg]=useState("customer");
 
 
     const hEmail = (event) => {setEmail(event.target.value);}
     const hPw    = (event) => {setPw   (event.target.value);}
+    const hCtg =(event)=>{ setCtg(event.target.value); }
 
     const check = (event) => {
         event.preventDefault(); 
@@ -28,6 +30,7 @@ export default function Login() {
         signInWithEmailAndPassword(auth, email, pw)
         .then(res => {
             localStorage.setItem("un",email);
+            localStorage.setItem("ctg",ctg);
             navigate('/');
         })
         .catch(err => alert ("issue "+err));
@@ -49,6 +52,9 @@ export default function Login() {
                  <input type='password' placeholder='Enter the password'
                     onChange={hPw} value={pw} />
                 </div>
+                <input type="radio" name="ctg" value="customer" onChange={hCtg} checked={ ctg==="customer"}/>Customer
+                <input type="radio" name="ctg" value="farmer" onChange={hCtg}/>Farmer
+                <br/><br/>
                 <Link to="/forgotpass">Forgot Password?</Link>
                 <div class="loginbtn">
                     <input type='submit' value='Login' />

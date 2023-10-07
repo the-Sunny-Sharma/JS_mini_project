@@ -4,6 +4,7 @@ import cart from "../assets/cart.svg";
 
 function Navbar() {
   const un = localStorage.getItem("un");
+  const ctg=localStorage.getItem("ctg");
   return (
     <>
       <div className="nav-bar">
@@ -17,15 +18,20 @@ function Navbar() {
                   Home
                 </Link>
               </li>
+              <li>{(un != null && ctg==="customer") && (<Link to='/products' className="link">Buy Products</Link>)}</li>
               <li>
-                <Link to="/history" className="link">
+                {(un!=null && ctg==="customer")&&
+                (<Link to="/history" className="link">
                   Order History
-                </Link>
+                </Link>)
+                }
               </li>
               <li>
+                {(un!== null && ctg==="farmer") &&(
                 <Link to="/yourproduct" className="link">
-                  Host Product
-                </Link>
+                  Add Product
+                </Link>)
+                }
               </li>
               <li>
                 <Link to="/settings" className="link">
@@ -40,7 +46,7 @@ function Navbar() {
                 )}
               </li>
               <li>
-                {un == null && (
+                {(un == null) && (
                   <Link to="/signup" className="link">
                     Sign Up
                   </Link>
