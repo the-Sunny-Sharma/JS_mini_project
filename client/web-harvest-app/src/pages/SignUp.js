@@ -44,7 +44,7 @@ export default function SignUp() {
             <form onSubmit={save}>
                 <div class="l-form">
                     <div class="e-email">
-                        <input type='email' placeholder='Enter your email'
+                        <input className='text' type='email' placeholder='Enter your email'
                         onChange={hEmail} value={email} ref={rEmail} />
                     </div>
                     <div class="pass">

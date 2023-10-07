@@ -3,6 +3,8 @@
     background-color: #4AC37A;
     width: 100%;
     position: fixed;
+    top: 0;
+    left: 0;
 }
 
 .logo {
