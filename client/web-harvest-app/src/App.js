@@ -14,6 +14,7 @@ import Logout from './pages/Logout';
 import CardDisplay from './pages/CardDisplay';
 import Forgotpass from './pages/Forgotpass';
 import Products from './pages/Products';
+import Dashboard from './pages/Dashboard';
 
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
         <Route path='/changepass' element={<ChangePass />} />
         <Route path='/forgotpass' element={<Forgotpass />} />
         <Route path='/products' element={<Products />} />
+        <Route path='/dashboard' element={<Dashboard />}/>
         <Route path='*' element={<Page404/>}/>
       </Routes>
       

@@ -20,7 +20,7 @@ export default function ChangePass(){
             navigate("/login");
         else
             setUn(un);
-    },[]);  
+    },[]); 
     
     const changepass=(event)=>{
         event.preventDefault();
@@ -47,11 +47,11 @@ export default function ChangePass(){
         <center>
         <Navbar/>
         <div clas="main-div">
-            <div class="h1">
+            <div className="h1">
                 <h1 >Hii { un }</h1>
             </div>
             <br/>
-            <div class="main-f">
+            <div className="main-f">
                 <form onSubmit={ changepass }>
                     <input type="password" placeholder="Enter New Password" onChange={hPw1} value={pw1} ref={rPw1}/>
                     <br/><br/>

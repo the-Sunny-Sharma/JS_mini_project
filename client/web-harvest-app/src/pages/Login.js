@@ -1,9 +1,9 @@
-import '../styles/login.css';
 import  { useState, useRef, useEffect } from 'react';
 import app from '../components/Firebase';
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
 import { Link, useNavigate } from 'react-router-dom';
 import Navbar from '../components/Navbar';
+import '../styles/login.css';
 
 export default function Login() {
 
@@ -31,7 +31,10 @@ export default function Login() {
         .then(res => {
             localStorage.setItem("un",email);
             localStorage.setItem("ctg",ctg);
-            navigate('/');
+            if(ctg === "customer")
+                navigate('/');
+            else if(ctg === "farmer")
+                navigate('/dashboard')
         })
         .catch(err => alert ("issue "+err));
     }
@@ -39,24 +42,24 @@ export default function Login() {
         <>
             
             <Navbar />
-            <div class="main-div">
+            <div className="main-div">
                 
-             <div class="l-form-login"> <form onSubmit={check}>
-             <input type="radio" name="ctg" value="customer" onChange={hCtg} checked={ ctg==="customer"}/><label className='lbl'>Customer</label>
-                <input type="radio" name="ctg" value="farmer" onChange={hCtg}/><label className='lbl'>Farmer</label>
-                <div class="e-email">
-                    <input className='txt-in' type='email' placeholder='Enter your email'
+             <div className="l-form-login"> <form onSubmit={check}>
+             <input type="radio" name="ctg" value="customer" onChange={hCtg} checked={ ctg==="customer"}/><label classNameName='lbl'>Customer</label>
+                <input type="radio" name="ctg" value="farmer" onChange={hCtg}/><label classNameName='lbl'>Farmer</label>
+                <div className="e-email">
+                    <input classNameName='txt-in' type='email' placeholder='Enter your email'
                     onChange={hEmail} value={email} ref={rEmail} />
                 </div>
                 
-                <div class="pass">
-                 <input className='txt-in' type='password' placeholder='Enter the password'
+                <div className="pass">
+                 <input classNameName='txt-in' type='password' placeholder='Enter the password'
                     onChange={hPw} value={pw} />
                 </div>
-                <Link to="/forgotpass" className='forgot-pass'>Forgot Password?</Link>
+                <Link to="/forgotpass" classNameName='forgot-pass'>Forgot Password?</Link>
 
-                <div class="loginbtn">
-                    <input className='txt-in btn-login' type='submit' value='Login' />
+                <div className="loginbtn">
+                    <input classNameName='txt-in btn-login' type='submit' value='Login' />
                 </div>
                      </form>
              </div>
