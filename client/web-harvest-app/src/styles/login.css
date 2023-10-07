@@ -20,6 +20,10 @@
     border-radius: 15px;
 }
 
+.lbl {
+    font-size: 1.2rem;
+}
+
 .e-email{
     padding: 35px;
    
