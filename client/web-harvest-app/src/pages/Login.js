@@ -34,16 +34,28 @@ export default function Login() {
     }
     return(
         <>
+            
             <Navbar />
-            <h1>Login Page</h1>
-            <form onSubmit={check}>
-                <input type='email' placeholder='Enter your email'
-                onChange={hEmail} value={email} ref={rEmail} />
-                <input type='password' placeholder='Enter the password'
-                onChange={hPw} value={pw} />
-                <input type='submit' value='Login' />
-            </form>
-            <h1>{msg}</h1>
+            <div class="main-div">
+                <div class="h1">
+                    
+                </div>
+             <div class="l-form"> <form onSubmit={check}>
+                <div class="e-email">
+                    <input type='email' placeholder='Enter your email'
+                    onChange={hEmail} value={email} ref={rEmail} />
+                </div>
+                <div class="pass">
+                 <input type='password' placeholder='Enter the password'
+                    onChange={hPw} value={pw} />
+                </div>
+                <div class="loginbtn">
+                    <input type='submit' value='Login' />
+                </div>
+                     </form>
+             </div>
+                <h1>{msg}</h1>
+            </div>
         </>
     );
 }

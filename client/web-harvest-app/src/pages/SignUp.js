@@ -1,4 +1,4 @@
-import '../styles/login.css';
+import '../styles/SignUp.css';
 import  { useState, useRef, useEffect } from 'react';
 import app from '../components/Firebase';
 import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
@@ -40,16 +40,27 @@ export default function SignUp() {
     return(
         <>
         <Navbar />
-            <h1>SignUp Page</h1>
+            <div class="main-div">
             <form onSubmit={save}>
-                <input type='email' placeholder='Enter your email'
-                onChange={hEmail} value={email} ref={rEmail} />
-                <input type='password' placeholder='Enter password'
-                onChange={hPw1} value={pw1} />
-                <input type='password' placeholder='Confirm password'
-                onChange={hPw2} value={pw2} />
-                <input type='submit' value='Sign Up' />
+                <div class="l-form">
+                    <div class="e-email">
+                        <input type='email' placeholder='Enter your email'
+                        onChange={hEmail} value={email} ref={rEmail} />
+                    </div>
+                    <div class="pass">
+                        <input type='password' placeholder='Enter password'
+                        onChange={hPw1} value={pw1} />
+                    </div>
+                    <div class="c-pass">
+                        <input type='password' placeholder='Confirm password'
+                        onChange={hPw2} value={pw2} />
+                    </div>
+                    <div class="loginbtn">
+                        <input type='submit' value='Sign Up' />
+                    </div>
+                </div>
             </form>
+            </div>
             <h1>{msg}</h1>
         </>
     );
