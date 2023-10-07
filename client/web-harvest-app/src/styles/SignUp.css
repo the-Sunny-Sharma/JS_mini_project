@@ -1,17 +1,12 @@
-.main-div {
-    margin: 0;
-    padding: 0;
-}
 
 .l-form {
-    padding: 20;
+    padding: 20px;
     border-radius: 25px;
-    width: 30%; 
-    height: 330px;
-    margin: 0 auto; 
-    background-image: linear-gradient(to right, #4aa124, #0c8b67);
+    width: 40%; 
+    height: auto;
+    margin: 0 auto;
+    background-color: rgba(74, 161, 36, 0.6); /* Specify the background color with alpha (opacity) */
     text-align: center;
-    opacity: 0.7;
     position: absolute;
     top: 55%;
     left: 50%;
@@ -20,18 +15,19 @@
     padding: 20px;
 }
 .e-email{
-    padding: 30px;
+    padding: 10px;
 }
 
 
 .pass{
-    padding: 30px;
+    padding: 10px;
 }
 .c-pass{
-    padding: 30px;
+    padding: 10px;
 }
 .loginbtn{
-    padding: 20px;
+    padding: 10px;
+    
 }
 
 @media screen and (max-width: 800px) {
@@ -54,5 +50,21 @@
     align-items: center;
 }
 
-
+.txt-in {
+    background-color: #fff;
+    padding: 8px;
+    border-radius: 15px;
+}
+.sign:hover{
+   
+    background-color: #06c755;
+  opacity: 80%;
+}
+.sign-btn{
+    border-radius: 15px;
+}
+.wel{
+    color: #fff;
+    font-size: 30px;
+}
 

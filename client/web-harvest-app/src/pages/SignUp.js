@@ -2,7 +2,7 @@ import '../styles/SignUp.css';
 import  { useState, useRef, useEffect } from 'react';
 import app from '../components/Firebase';
 import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate,Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 
 export default function SignUp() {
@@ -40,28 +40,33 @@ export default function SignUp() {
     return(
         <>
         <Navbar />
-            <div class="main-div">
+            <div className="main-div">
+            
             <form onSubmit={save}>
-                <div class="l-form">
-                    <div class="e-email">
-                        <input className='text' type='email' placeholder='Enter your email'
+                <div className="l-form">
+                <h1 className='wel'>Welcome To Our Website!!</h1>
+                    <div className="e-email">
+                        <input className='txt-in' type='email' placeholder='Enter your email'
                         onChange={hEmail} value={email} ref={rEmail} />
                     </div>
-                    <div class="pass">
-                        <input type='password' placeholder='Enter password'
+                    <div className="pass">
+                        <input className='txt-in' type='password' placeholder='Enter password'
                         onChange={hPw1} value={pw1} />
                     </div>
-                    <div class="c-pass">
-                        <input type='password' placeholder='Confirm password'
+                    <div className="c-pass">
+                        <input  className='txt-in' type='password' placeholder='Confirm password'
                         onChange={hPw2} value={pw2} />
                     </div>
-                    <div class="loginbtn">
-                        <input type='submit' value='Sign Up' />
+                    <p className='instruct'>Already have an account? <Link to='/login' className='forgot-pass'> LogIn</Link> </p>
+                    <div classname="loginbtn">
+                        <input className='sign sign-btn' type='submit' value='Sign Up' />
                     </div>
                 </div>
-            </form>
+            
+                
+                </form>
             </div>
-            <h1>{msg}</h1>
+            
         </>
     );
 }
