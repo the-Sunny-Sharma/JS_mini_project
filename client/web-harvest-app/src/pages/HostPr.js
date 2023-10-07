@@ -27,7 +27,6 @@ export default function HostPr(){
 
     return(
         <>
-        <center>
             <Navbar />
             <h2>Hii, {un}</h2>
             <form>
@@ -41,7 +40,6 @@ export default function HostPr(){
                 <br/><br/>
                 <input type='submit' value="Submit"/>
             </form>
-         </center>
         </>
     );
 }
