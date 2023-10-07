@@ -44,7 +44,7 @@ export default function Login() {
             <Navbar />
             <div className="main-div">
                 
-<<<<<<< HEAD
+
              <div class="l-form-login">
              <h1 className='wel'>Welcome Again!!</h1>
                  <form onSubmit={check}>
@@ -52,13 +52,8 @@ export default function Login() {
                 <input type="radio" name="ctg" value="farmer" onChange={hCtg}/><label className='lbl'>Farmer</label>
                 <div class="e-email">
                     <input className='txt-in' type='email' placeholder='Enter your email'
-=======
-             <div className="l-form-login"> <form onSubmit={check}>
-             <input type="radio" name="ctg" value="customer" onChange={hCtg} checked={ ctg==="customer"}/><label classNameName='lbl'>Customer</label>
-                <input type="radio" name="ctg" value="farmer" onChange={hCtg}/><label classNameName='lbl'>Farmer</label>
-                <div className="e-email">
-                    <input classNameName='txt-in' type='email' placeholder='Enter your email'
->>>>>>> de5af6e63828b7bf642e69ece50c358dc84e32ce
+
+
                     onChange={hEmail} value={email} ref={rEmail} />
                 </div>
                 
