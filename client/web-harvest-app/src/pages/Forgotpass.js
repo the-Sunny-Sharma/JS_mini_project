@@ -1,7 +1,8 @@
 import { getAuth, sendPasswordResetEmail } from 'firebase/auth';
 import Navbar from '../components/Navbar';
 import { useState, useEffect, useRef } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import '../styles/login.css';
 
 export default function Forgotpass()
 {
@@ -28,15 +29,20 @@ export default function Forgotpass()
     return(
         <>
         <Navbar/>
-        <center>
-            <h1>Forgot Password</h1>
-            <br/>
+
+        <div className='main-div'>
+            <div className='l-form-login'>
+            <h1 className='reset-head'>Reset Your Password</h1>
+            <p className='instruct'>Enter the email address associated with your account and we'll send you a link to reset your password.</p>
             <form onSubmit={ forgotpass }>
-                <input type="email" placeholder="Enter your Email" onChange={hMail} value={mail} ref={rMail}/>
+                <input className='txt-in' type="email" placeholder="Enter your Email" onChange={hMail} value={mail} ref={rMail}/>
                 <br/><br/>
-                <input type="submit" value="Submit"/>
+                <input className="btn-login" type="submit" value="Continue"/>
             </form>
-        </center>
+            <p className='instruct'>Don't have an account? <Link to='/signup' className='forgot-pass'> Sign Up</Link> </p>
+            </div>
+        </div>
+            
         </>
     );
 }

@@ -40,24 +40,23 @@ export default function Login() {
             
             <Navbar />
             <div class="main-div">
-                <div class="h1">
-                    
-                </div>
-             <div class="l-form"> <form onSubmit={check}>
+                
+             <div class="l-form-login"> <form onSubmit={check}>
+             <input type="radio" name="ctg" value="customer" onChange={hCtg} checked={ ctg==="customer"}/><label className='lbl'>Customer</label>
+                <input type="radio" name="ctg" value="farmer" onChange={hCtg}/><label className='lbl'>Farmer</label>
                 <div class="e-email">
-                    <input type='email' placeholder='Enter your email'
+                    <input className='txt-in' type='email' placeholder='Enter your email'
                     onChange={hEmail} value={email} ref={rEmail} />
                 </div>
+                
                 <div class="pass">
-                 <input type='password' placeholder='Enter the password'
+                 <input className='txt-in' type='password' placeholder='Enter the password'
                     onChange={hPw} value={pw} />
                 </div>
-                <input type="radio" name="ctg" value="customer" onChange={hCtg} checked={ ctg==="customer"}/>Customer
-                <input type="radio" name="ctg" value="farmer" onChange={hCtg}/>Farmer
-                <br/><br/>
-                <Link to="/forgotpass">Forgot Password?</Link>
+                <Link to="/forgotpass" className='forgot-pass'>Forgot Password?</Link>
+
                 <div class="loginbtn">
-                    <input type='submit' value='Login' />
+                    <input className='txt-in btn-login' type='submit' value='Login' />
                 </div>
                      </form>
              </div>
