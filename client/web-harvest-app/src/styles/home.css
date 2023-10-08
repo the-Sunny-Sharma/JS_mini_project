@@ -1,7 +1,12 @@
-.heading {
-    font-style: monospace;
+.search-sym {
+  appearance: none;
+  border: none;
+  background: none;
+  cursor: pointer;
 }
 
-/* .main-home {
-   margin-top: 180px;
-} */
+.search-sym::before {
+  content: "\1F50D";
+  font-size: 20px;
+  color: #000;
+}

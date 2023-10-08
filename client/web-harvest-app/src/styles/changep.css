@@ -1,0 +1,73 @@
+.main-div-cp {
+    background-image: url(../assets/realbglog.jpeg);
+    background-size: cover;
+    background-attachment: fixed;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .main-container-cp {
+    margin-top: 50px;
+    padding: 20px;
+    border-radius: 25px;
+    width: 40%;
+    height: auto;
+    margin: 0 auto;
+    background-color: rgba(74, 161, 36, 0.6);
+    text-align: center;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow-y: auto;
+    padding: 20px;
+  }
+  
+  .greet-cp {
+    color: #fff;
+    font-size: 1.5em;
+  }
+
+  .form-cp {
+    padding: 5px;
+  }
+
+  .txt-in-cp {
+    display: block;
+    background-color: #fff;
+    padding: 8px;
+    border-radius: 15px;
+    margin: auto;
+    margin-bottom: 10px;
+  }
+
+  
+.cfm-btn {
+    background-color: #0656c7;
+    border: none;
+    border-radius: 5px;
+    padding: 8px;
+    width: 40%;
+    color: #fff;
+    margin-top: 15px;
+  }
+  
+  .cfm-btn:hover {
+    background-color: #0656c7;
+    opacity: 80%;
+  }
+  
+  @media screen and (max-width: 800px) {
+    .main-container-cp {
+      width: 50%;
+      height: 4%7;
+    }
+  } 
+  
+
+
+

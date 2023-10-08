@@ -1,8 +1,9 @@
 import { getAuth, sendPasswordResetEmail } from 'firebase/auth';
 import Navbar from '../components/Navbar';
 import { useState, useEffect, useRef } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import '../styles/login.css';
+import { useNavigate } from 'react-router-dom';
+import '../styles/forgotP.css';
+
 
 export default function Forgotpass()
 {
@@ -15,7 +16,7 @@ export default function Forgotpass()
         let un = localStorage.getItem("un");
         if(un != null)
             navigate("/login");
-    },[]); 
+    },[navigate]); 
 
     const forgotpass=(event)=>{
         event.preventDefault();
@@ -30,8 +31,8 @@ export default function Forgotpass()
         <>
         <Navbar/>
 
-        <div className='main-div'>
-            <div className='l-form-login'>
+        <div className='main-div-fp'>
+            <div className='l-form-fp'>
             <h1 className='reset-head'>Reset Your Password</h1>
             <p className='instruct'>Enter the email address associated with your account and we'll send you a link to reset your password.</p>
             <form onSubmit={ forgotpass }>
@@ -39,7 +40,6 @@ export default function Forgotpass()
                 <br/><br/>
                 <input className="btn-login" type="submit" value="Continue"/>
             </form>
-            <p className='instruct'>Don't have an account? <Link to='/signup' className='forgot-pass'> Sign Up</Link> </p>
             </div>
         </div>
             

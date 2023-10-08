@@ -9,13 +9,11 @@ import SignUp from './pages/SignUp';
 import Page404 from './pages/Page404';
 import ChangePass from './pages/ChangePass';
 import './styles/app.css';
-import app from './components/Firebase';
 import Logout from './pages/Logout';
-import CardDisplay from './pages/CardDisplay';
 import Forgotpass from './pages/Forgotpass';
 import Products from './pages/Products';
 import Dashboard from './pages/Dashboard';
-
+import ManageProduct from './pages/ManageProduct';
 
 function App() {
   return (
@@ -25,11 +23,11 @@ function App() {
         <Route path='/' element={<Home />}/>
         <Route path='/history' element={<History />}/>
         <Route path='/yourproduct' element={<HostPr />}/>
+        <Route path='/manageprod' element={<ManageProduct />} />
         <Route path='/settings' element={<Setting />}/>
         <Route path='/signup' element={<SignUp />}/>
         <Route path='/login' element={<Login/>}/>
         <Route path='/logout' element={<Logout />} />
-        <Route path='/carddisplay' element={<CardDisplay />} />
         <Route path='/changepass' element={<ChangePass />} />
         <Route path='/forgotpass' element={<Forgotpass />} />
         <Route path='/products' element={<Products />} />
