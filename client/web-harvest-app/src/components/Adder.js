@@ -1,5 +1,5 @@
 import { useState } from "react";
-import '../styles/adder.css';
+import "../styles/adder.css";
 
 export default function Adder() {
   const [count, setCount] = useState(0);
@@ -13,9 +13,13 @@ export default function Adder() {
 
   return (
     <div className="container-add">
-      <button className="btn minus" onClick={handleDecrement}>-</button>
+      <button className="btn minus" onClick={handleDecrement}>
+        -
+      </button>
       <p className="num">{count}</p>
-      <button className="btn plus" onClick={() => setCount((c) => c + 1)}>+</button>      
+      <button className="btn plus" onClick={() => setCount((c) => c + 1)}>
+        +
+      </button>
     </div>
   );
 }

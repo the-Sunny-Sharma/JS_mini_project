@@ -1,13 +1,25 @@
 import '../styles/home.css';
 import Navbar from '../components/Navbar';
-import CardDisplay from './CardDisplay';
+import HCards from './HCards';
+
 export default function Home(){
     return(
         <>
             <Navbar />
             <div className='main-home'>
-                <h1 className="heading">Home Page</h1>
-                <CardDisplay />
+                <div className='nav-section'>
+                    <div className='search-section'>
+                        <form>
+                            <div className='search-bar'>
+                                <input type='text' placeholder='Search fresh. Eat Fresh.' />
+                            </div>
+                            <div className='search-sym'>
+                            <input class="search-sym" type="submit" aria-label=""/>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <HCards />
             </div>
         </>
     );

@@ -1,0 +1,33 @@
+.main-div-fp {
+    background-image: url(../assets/realbglog.jpeg);
+    background-size: cover;
+    background-attachment: fixed;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .l-form-fp {
+    margin-top: 50px;
+    padding: 20px;
+    border-radius: 25px;
+    width: 40%;
+    height: auto;
+    margin: 0 auto;
+    background-color: rgba(74, 161, 36, 0.6);
+    text-align: center;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow-y: auto;
+    padding: 20px;
+  }
+  
+  .reset-head {
+    font-size: 1.8em;
+    color: #fff;
+  }
