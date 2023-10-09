@@ -1,6 +1,7 @@
 import '../styles/home.css';
 import Navbar from '../components/Navbar';
 import HCards from './HCards';
+import Footer from '../components/Footer';
 
 export default function Home(){
     return(
@@ -20,6 +21,9 @@ export default function Home(){
                     </div>
                 </div>
                 <HCards />
+            </div>
+            <div>
+            <Footer />
             </div>
         </>
     );
