@@ -1,0 +1,53 @@
+.card-dash {
+    /* height: 100vh; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #faf9f6;
+  }
+
+.d-card-container {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+    height: fit-content;
+    flex-direction: row;
+}
+.column-d {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  
+
+  .row-grid {
+    display: flex;
+    flex-wrap: wrap; /* Allow cards to wrap to the next row when needed */
+    gap: 20px; /* Adjust the gap between cards as needed */
+  }
+
+.dash-card {
+    padding: 10px;
+    margin: 20px;
+    width: 200px;
+}
+
+.green-revenue {
+    background-color: rgb(32, 250, 28);   
+}
+
+.blue-sale {
+    background-color: rgb(35, 153, 255);
+}
+
+.yellow-order {
+    background-color: yellow;
+}
+
+.red-most-sold {
+    background-color: red;
+}
+
+
+  
