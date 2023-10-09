@@ -1,46 +1,58 @@
-import Navbar from '../components/Navbar';
+import Navbar from "../components/Navbar";
+import "../styles/hostpr.css";
 import { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-export default function HostPr(){
-    const rName=useRef();
-    const navigate = useNavigate();
-    useEffect(() => {
-        let un = localStorage.getItem("un");
-        if(un == null)
-            navigate("/login");
-        else
-            setUn(un);
-    },[]);
-    const[un,setUn]=useState("");
-    const[name,setName]=useState("");
-    const[mail,setMail]=useState("");
-    const[mob,setMob]=useState("");
-    const[add,setAdd]=useState("");
+export default function HostPr() {
+    const [un, setUn] = useState('');
+        const navigate = useNavigate();
+        useEffect(() => {
+            let un = localStorage.getItem("un");
+            if(un == null)
+                navigate("/login");
+            else
+                setUn(un);
+            },[]);
 
-    const hName=(event)=>{ setName(event.target.value); }
-    const hMail=(event)=>{ setMail(event.target.value); }
-    const hMob=(event)=>{ setMob(event.target.value); }
-    const hAdd=(event)=>{ setAdd(event.target.value); }
-
-    
-
-    return(
-        <>
-            <Navbar />
-            <h2>Hii, {un}</h2>
-            <form>
-                <input type="text" placeholder='Enter your Name' onChange={hName} value={name} ref={rName}/>
-                <br/><br/>
-                <input type="email" placeholder='Enter your Email' onChange={hMail} value={mail}/>
-                <br/><br/>
-                <input type="tel" placeholder='Enter your Mob. No.' pattern='[0-9]{10}'onChange={hMob} value={mob}/>
-                <br/><br/>
-                <input type="textarea" placeholder='Enter your Address' onChange={hAdd} value={add}/>
-                <br/><br/>
-                <input type='submit' value="Submit"/>
-            </form>
-        </>
-    );
+  return (
+    <>
+      <Navbar />
+      <h2>Add a new product- {un}</h2>
+      <form>
+        <div>
+          <label>Enter product name:  </label>
+          <input type="text" />
+        </div>
+        <div>
+          <label>Description: </label>
+          <textarea rows="5" cols="20" placeholder="Type here..." />
+        </div>
+        <div>
+          <label>Mobile: </label>
+          <input type="text" />
+        </div>
+        <div>
+          <label>Amount: </label>
+          <input type="text" />
+        </div>
+        <div>
+          <label>Per Quantity: </label>
+          <input type="text" />
+        </div>
+        <div>
+          <label>Total Quantity: </label>
+          <input type="text" />
+        </div>
+        <div>
+          <label>
+            Your Image File:
+            <input type="file" name="myImage" accept="image/png, image/jpeg" />
+          </label>
+        </div>
+        <div>
+            <input type="submit" value="Add Product"/>
+        </div>
+      </form>
+    </>
+  );
 }
-

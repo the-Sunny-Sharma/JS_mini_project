@@ -7,6 +7,20 @@
     left: 0;
 }
 
+.nav-logo-c-l {
+    padding: 5px;
+}
+
+.cart-log {
+    width: fit-content;
+    display: inline;
+    margin: 0;
+    padding: 0;
+    vertical-align: middle;
+    margin-left: 89%;
+    background-color:  crimson;
+}
+
 .logo {
     background-image: url(../assets/logo.png);
     display: inline-block;
@@ -14,6 +28,12 @@
     vertical-align: top;
     width: 50px;
     height: 50px;
+    padding: 0;
+    margin: 0;
+}
+
+.a-logo {
+    text-decoration: none;
 }
 
 .title {
