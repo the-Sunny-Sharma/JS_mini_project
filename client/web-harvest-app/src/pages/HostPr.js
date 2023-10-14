@@ -2,6 +2,7 @@ import Navbar from "../components/Navbar";
 import "../styles/hostpr.css";
 import { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
+import Footer from "../components/Footer";
 
 export default function HostPr() {
     const [un, setUn] = useState('');
@@ -53,6 +54,7 @@ export default function HostPr() {
             <input type="submit" value="Add Product"/>
         </div>
       </form>
+      <Footer/>
     </>
   );
 }
