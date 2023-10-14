@@ -1,6 +1,10 @@
 import { Link } from "react-router-dom";
 
 function Footer() {
+  const read=(event)=>{
+    event.preventDefault();
+    window.location.reload();
+  }
   return (
     <>
       {/*  Remove the container if you want to extend the Footer to full width.*/}
@@ -13,7 +17,7 @@ function Footer() {
           {/* Section: Social mediLink  */}
           <section
             className="d-flex justify-content-between p-4 text-white"
-            style={{ backgroundColor: '#21D192' }}
+            style={{ backgroundColor: '#4AC37A' }}
           >
             {/*  Left  */}
             <div className="me-5">
@@ -74,22 +78,22 @@ function Footer() {
                     style=  {{ width:'60px', backgroundColor: '#7c4dff', height: '2px' }}
                   />
                   <p>
-                    <Link to="#!" className="text-dark">
+                    <Link to="/" className="text-dark" onClick={ read }>
                       Best Deals
                     </Link>
                   </p>
                   <p>
-                    <Link to="#!" className="text-dark">
+                    <Link to="/" className="text-dark" onClick={ read }>
                       New Arrivals
                     </Link>
                   </p>
                   <p>
-                    <Link to="#!" className="text-dark">
+                    <Link to="/" className="text-dark" onClick={ read }>
                       Best Sellers
                     </Link>
                   </p>
                   <p>
-                    <Link to="#!" className="text-dark">
+                    <Link to="/" className="text-dark" onClick={ read }>
                       Deals of the Day
                     </Link>
                   </p>
@@ -105,22 +109,22 @@ function Footer() {
                     style= {{ width: '60px', backgroundColor: '#7c4dff', height: '2px' }}
                   />
                   <p>
-                    <Link to="#!" className="text-dark">
+                    <Link to="/" className="text-dark" onClick={ read }>
                       Home
                     </Link>
                   </p>
                   <p>
-                    <Link to="#!" className="text-dark">
+                    <Link to="/products" className="text-dark" onClick={ read }>
                       Buy Product
                     </Link>
                   </p>
                   <p>
-                    <Link to="#!" className="text-dark">
+                    <Link to="#!" className="text-dark" onClick={ read }>
                       About Us
                     </Link>
                   </p>
                   <p>
-                    <Link to="#!" className="text-dark">
+                    <Link to="#!" className="text-dark" onClick={ read }>
                       Help
                     </Link>
                   </p>
@@ -136,16 +140,16 @@ function Footer() {
                     style={{ width: '60px', backgroundColor: '#7c4dff', height: '2px' }}
                   />
                   <p>
-                    <i className="fas fa-home mr-3"></i> IT Branch, IIT Kaman.
+                    <i className="fas fa-home mr-3"></i> TE-IT 
                   </p>
                   <p>
                     <i className="fas fa-envelope mr-3"></i> logic.lords@mail.com
                   </p>
                   <p>
-                    <i className="fas fa-phone mr-3"></i> 212173314
+                    <i className="fas fa-phone mr-3"></i> +91 8433898723
                   </p>
                   <p>
-                    <i className="fas fa-print mr-3"></i> 6969696969
+                    <i className="fas fa-print mr-3"></i> +91 8433865642
                   </p>
                 </div>
                 {/* <!-- Grid column --> */}

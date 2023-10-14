@@ -1,6 +1,7 @@
 import Navbar from '../components/Navbar';
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import Footer from '../components/Footer';
 
 export default function History(){
     const navigate = useNavigate();
@@ -19,6 +20,7 @@ export default function History(){
             <Navbar />
             <h1 className="heading">History</h1>
             <h2>Hii, {un}</h2>
+            <Footer/>
         </>
     );
 }

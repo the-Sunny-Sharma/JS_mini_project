@@ -1,7 +1,9 @@
 import { Carder } from "../components/Card";
+import Footer from "../components/Footer";
 import "../styles/carddisplay.css";
 export default function BuyCards() {
   return (
+    <>
     <div className="cards">
       <div className="col card-grid">
         <Carder
@@ -34,5 +36,7 @@ export default function BuyCards() {
         />
       </div>
     </div>
+    <Footer/>
+</>
   );
 }
