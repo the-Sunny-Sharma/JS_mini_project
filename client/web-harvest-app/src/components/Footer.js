@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+import '../styles/footer.css';
+
 
 function Footer() {
   const read=(event)=>{
@@ -10,6 +12,7 @@ function Footer() {
       {/*  Remove the container if you want to extend the Footer to full width.*/}
       
         {/* Footer  */}
+        <div className="footer">
         <footer
           className="text-center text-lg-start text-dark"
           style={{ backgroundColor: '#ECEFF1' }}
@@ -172,7 +175,7 @@ function Footer() {
           {/* <!-- Copyright --> */}
         </footer>
         {/* <!-- Footer --> */}
-      
+        </div>
     </>
   );
 }
