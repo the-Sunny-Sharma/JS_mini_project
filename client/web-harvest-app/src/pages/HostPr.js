@@ -3,7 +3,7 @@ import "../styles/hostpr.css";
 import React, { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import Footer from "../components/Footer";
-import axios from 'axios';
+import axios from "axios";
 
 export default function HostPr() {
   const [un, setUn] = useState("");

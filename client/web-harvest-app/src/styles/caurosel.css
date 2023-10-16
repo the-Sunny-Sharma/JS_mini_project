@@ -39,3 +39,10 @@
 .slideshowDot.active {
   background-color: #6a0dad;
 }
+
+/* Add responsive styles for images */
+.slide img {
+  width: 100%;
+  height: auto;
+}
+
