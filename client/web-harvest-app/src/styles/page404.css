@@ -39,3 +39,12 @@
 .contant_box_404 {
   margin-top: -50px;
 }
+
+.text-center {
+    margin: auto;
+}
+
+#cont-404 {
+    width: 80%;
+    margin: auto;
+}
