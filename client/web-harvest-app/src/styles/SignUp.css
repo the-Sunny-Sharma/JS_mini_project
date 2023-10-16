@@ -1,3 +1,4 @@
+
  .main-div-signup {
   background-image: url(../assets/realbglog.jpeg);
   background-size: cover;
@@ -8,6 +9,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
 }
 
 .l-form-su {
@@ -73,8 +75,11 @@
 }
 
 @media screen and (max-width: 800px) {
+
+
   .l-form-su {
     width: 80%;
     height: 55%;
   }
 } 
+
