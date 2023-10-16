@@ -4,7 +4,7 @@ import '../styles/caurosel.css';
 function Slideshow() {
 
   const colors = ["red",
-   "#00C49F", "#FFBB28"];
+   "#00C49F", "#FFBB28", "green", "blue"];
    
 const delay = 2500;
 
