@@ -1,20 +1,12 @@
 import { Link } from "react-router-dom";
-import React, { useState } from 'react';
 import "../styles/navbar.css";
 
 function Navbar() {
-  const [menuVisible, setMenuVisible] = useState(false);
   const un = localStorage.getItem("un");
   const ctg = localStorage.getItem("ctg");
   return (
     <>
       <div className="nav-bar">
-      <div className="hamburger-icon" onClick={() => setMenuVisible(!menuVisible)}>
-  <i className={`fa ${menuVisible ? 'fa-times' : 'fa-bars'}`}></i>
-</div>
-
-        
-        <div className={`menu-items ${menuVisible ? 'visible' : ''}`}>
         <div className="nav-logo-c-l">
        <div className="logo">
         {/* user-home-logo */}
@@ -143,7 +135,6 @@ function Navbar() {
             </ul>
           </div>
         </div>
-      </div>
       </div>
     </>
   );

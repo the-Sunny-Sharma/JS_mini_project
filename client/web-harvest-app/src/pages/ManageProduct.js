@@ -1,5 +1,10 @@
 import Navbar from "../components/Navbar";
+
 import "../styles/ManageProduct.css"
+
+import Footer from "../components/Footer";
+
+
 export default function ManageProduct(){
     return (
         <>
@@ -9,6 +14,7 @@ export default function ManageProduct(){
         <div className="main-manage">
             <div className="h1">
             <h1>Manage Your Products from here.</h1>
+
             </div>
             <table border='5' className="main-table" style={{"width":"50%"}}>
             <thead>
@@ -72,6 +78,8 @@ export default function ManageProduct(){
             </table>
         </div>  
         
+            <Footer/>
+
         </>
     );
 }

@@ -13,11 +13,11 @@ export default function Adder() {
 
   return (
     <div className="container-add">
-      <button className="btn minus" onClick={handleDecrement}>
+      <button className="btn-add minus" onClick={handleDecrement}>
         -
       </button>
       <p className="num">{count}</p>
-      <button className="btn plus" onClick={() => setCount((c) => c + 1)}>
+      <button className="btn-add plus" onClick={() => setCount((c) => c + 1)}>
         +
       </button>
     </div>
