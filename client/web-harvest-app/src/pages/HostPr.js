@@ -3,6 +3,7 @@ import "../styles/hostpr.css";
 import React, { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import Footer from "../components/Footer";
+import axios from 'axios';
 
 export default function HostPr() {
   const [un, setUn] = useState("");
@@ -23,9 +24,10 @@ export default function HostPr() {
   const [perQtyUnit, setPerQtyUnit] = useState("");
   const [totQty, setTotQty] = useState("");
   const [totQtyUnit, setTotQtyUnit] = useState("");
+  const [msg, setMsg] = useState("");
 
   const [selectedFile, setSelectedFile] = useState(null);
-  const [selectedFileName, setSelectedFileName] = useState(null);
+  const [selectedFileName, setSelectedFileName] = useState("");
 
   const hProductName = (event) => {
     setProductName(event.target.value);
@@ -67,6 +69,35 @@ export default function HostPr() {
     setSelectedFileName(null);
   };
 
+  const saveProdInfo = (event) => {
+    event.preventDefault();
+    let prodData = {
+      productname,
+      description,
+      mobile,
+      amt,
+      perQty,
+      perQtyUnit,
+      totQty,
+      totQtyUnit,
+    };
+    let url = "http://localhost:9000/saveProdInfo";
+    axios.post(url, prodData)
+    .then((res) => {
+      setMsg("Product added successfully!");
+      setProductName("");
+      setDescription("");
+      setMobile("");
+      setAmt("");
+      setPerQty("");
+      setPerQtyUnit("");
+      setTotQty("");
+      setTotQtyUnit("");
+      clearSelectedImage();
+    })
+    .catch(err => setMsg("Issue: " + err));
+  };
+
   const clear = (event) => {
     event.preventDefault();
     setProductName("");
@@ -78,18 +109,20 @@ export default function HostPr() {
     setTotQty("");
     setTotQtyUnit("");
     clearSelectedImage();
+    rProductName.current.focus();
+    return;
   };
 
   return (
     <>
       <Navbar />
       <h2>Add a new product- {un}</h2>
-      <form>
+      <form onSubmit={saveProdInfo}>
         <div>
           <label>Enter product name: </label>
           <input
             type="text"
-            placeholder="Ex. Ram Sharma"
+            placeholder="Ex. Tomato"
             onChange={hProductName}
             value={productname}
             ref={rProductName}
@@ -176,6 +209,7 @@ export default function HostPr() {
           <input type="submit" value="Add Product" />
         </div>
         <button onClick={clear}>Clear All</button>
+        <p>{msg}</p>
       </form>
       <Footer />
     </>

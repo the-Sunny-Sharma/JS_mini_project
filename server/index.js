@@ -1,49 +1,51 @@
 const express = require("express");
 const cors = require("cors");
-const mysql = require("mysql2");
-const fs = require("fs");
-const { Connection } = require("mysql2/typings/mysql/lib/Connection");
-
+const { MongoClient } = require("mongodb");
 const app = express();
 app.use(cors());
 app.use(express.json());
-
-const con = mysql.createConnection({
-    host : "localhost",
-    user : "root",
-    password : "abc123",
-    database : "webharvest"
+app.post("/saveProdInfo", (req, res) => {
+  const url = "mongodb://0.0.0.0:27017";
+  const client = new MongoClient(url);
+  const db = client.db("webharvester");
+  const coll = db.collection("addedProds");
+  const record = {
+    productname: req.body.productname,
+    description: req.body.description,
+    mobile: req.body.mobile,
+    amt: req.body.amt,
+    perQty: req.body.perQty,
+    perQtyUnit: req.body.perQtyUnit,
+    totQty: req.body.totQty,
+    totQtyUnit: req.body.totQtyUnit,
+  };
+  coll
+    .insertOne(record)
+    .then((result) => res.send(result))
+    .catch((error) => res.send(error));
 });
 
-
-// Connect to the MySQL server
-Connection.connect(err => {
-    if (err) {
-      console.error('Error connecting to MySQL:', err);
-    } else {
-      console.log('Connected to MySQL');
-    }
-  });
-
-app.post("/save", (req, res) => {
-    let data = [req.body.sr, req.body.imageData, req.body.prod_name, req.body.prod_desc, req.body.price, req.body.seg, req.body.unit_seg, req.body.tot_qty, req.body.unit_tot_qty];
-    let sql = "insert into product values(?,?,?,?,?,?,?,?,?)"; 
-    con.query(sql, data, (err, result) => {
-        if(err)
-            return res.send(err);
-        else
-            return res.send(result);
-    })
+app.get("/getProdData", (req, res) => {
+  const url = "mongodb://0.0.0.0:27017";
+  const client = new MongoClient(url);
+  const db = client.db("webharvester");
+  const coll = db.collection("addedProds");
+  coll.find({}).toArray()
+  .then(result => res.send(result))
+  .catch(error => res.send(error));
 })
 
-app.post("/getdata",(req,res) => {
-    let sql = "select * from product";
-    con.query(sql, (err, result) => {
-        if(err)
-            return res.send(err);
-        else
-            return res.send(result);
-    });
-});
+app.delete("/rmProdData", (req, res) => {
+  const url = "mongodb://0.0.0.0:27017";
+  const client = new MongoClient(url);
+  const db = client.db("webharvester");
+  const coll = db.collection("addedProds");
+  const data = {"productname":req.body.productname};
+  coll.deleteOne(data)
+  .then(result => res.send(result))
+  .catch(error => res.send(error));
+})
 
-app.listen(9000, () => { console.log("ready to serve @ 9000");});
+app.listen(9000, () => {
+  console.log("ready to serve @ 9000");
+});

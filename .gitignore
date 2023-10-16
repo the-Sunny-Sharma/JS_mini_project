@@ -2,6 +2,7 @@
 
 # dependencies
 client/web-harvest-app/node_modules
+server/node_modules
 client/web-harvest-app/.pnp
 client/web-harvest-app/.pnp.js
 
