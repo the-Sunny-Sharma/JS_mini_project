@@ -1,73 +1,85 @@
 
-.l-form {
-    padding: 20px;
-    border-radius: 25px;
-    width: 40%; 
-    height: auto;
-    margin: 0 auto;
-    background-color: rgba(74, 161, 36, 0.6); /* Specify the background color with alpha (opacity) */
-    text-align: center;
-    position: absolute;
-    top: 55%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    overflow-y: auto;
-    padding: 20px;
-    z-index: 100;
-    
-}
-.e-email{
-    padding: 10px;
+ .main-div-signup {
+  background-image: url(../assets/realbglog.jpeg);
+  background-size: cover;
+  background-attachment: fixed;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
 }
 
+.l-form-su {
+  margin-top: 50px;
+  padding: 20px;
+  border-radius: 25px;
+  width: 40%;
+  height: auto;
+  margin: 0 auto;
+  background-color: rgba(74, 161, 36, 0.6);
+  text-align: center;
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  overflow-y: auto;
+  padding: 20px;
+}
 
-.pass{
-    padding: 10px;
+.greet {
+  color: #fff;
+  font-size: 2.2em;
 }
-.c-pass{
-    padding: 10px;
+
+.txt-signup {
+  padding: 5px;
 }
-.loginbtn{
-    padding: 10px;
-    
+
+.txt-in-su {
+  background-color: #fff;
+  padding: 8px;
+  border-radius: 15px;
+}
+
+.red-txt {
+  font-size: 0.8em;
+  color: red;
+  font-weight: 500;
+}
+
+.p-su{
+  color: #fff;
+}
+
+.log-pag {
+  color: blue;
+  text-decoration: none;
+}
+
+.sign-btn {
+  background-color: #06c755;
+  border: none;
+  border-radius: 5px;
+  padding: 8px;
+  width: 40%;
+  color: #fff;
+  margin-top: 15px;
+}
+
+.sign-btn:hover {
+  background-color: #06c755;
+  opacity: 80%;
 }
 
 @media screen and (max-width: 800px) {
-    .l-form {
-        width: 80%;
-        height: 40%;
-    }
-}
 
 
-.main-div {
-    background-image: url(../assets/realbglog.jpeg);
-    background-size: cover;
-    background-attachment: fixed;
-    height: 100vh; 
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-}
-
-.txt-in {
-    background-color: #fff;
-    padding: 8px;
-    border-radius: 15px;
-}
-.sign:hover{
-   
-    background-color: #06c755;
-  opacity: 80%;
-}
-.sign-btn{
-    border-radius: 15px;
-}
-.wel{
-    color: #fff;
-    font-size: 30px;
-}
+  .l-form-su {
+    width: 80%;
+    height: 55%;
+  }
+} 
 
