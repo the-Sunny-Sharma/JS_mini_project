@@ -83,23 +83,26 @@ export default function HostPr() {
   return (
     <>
       <Navbar />
-      <h2>Add a new product- {un}</h2>
-      <form>
+      <div className="full-page">
+      <div className="h2"><h2>Add a New Product- {un}</h2></div>
+    
+      <form className="main-form">
         <div>
-          <label>Enter product name: </label>
-          <input
+          <label className="p-name">Enter product name: </label>
+          <div className="name-ex">
+          <input 
             type="text"
             placeholder="Ex. Ram Sharma"
             onChange={hProductName}
             value={productname}
             ref={rProductName}
-          />
+          /></div>
         </div>
-        <div>
-          <div>
-            <label>Description: </label>
+        <div className="f-des">
+          <div className="des">
+            <label className="des-in">Description: </label>
           </div>
-          <textarea
+          <textarea className="main-d"
             placeholder="Ex. Fresh Tomatos from Bhanjanlal Farms Pvt. Ltd."
             onChange={hDescription}
             value={description}
@@ -177,6 +180,7 @@ export default function HostPr() {
         </div>
         <button onClick={clear}>Clear All</button>
       </form>
+      </div>
       <Footer />
     </>
   );
