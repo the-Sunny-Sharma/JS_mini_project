@@ -25,7 +25,6 @@ function App() {
         <Route path='/history' element={<History />}/>
         <Route path='/yourproduct' element={<HostPr />}/>
         <Route path='/manageprod' element={<ManageProduct />} />
-        <Route path='/settings' element={<Setting />}/>
         <Route path='/signup' element={<SignUp />}/>
         <Route path='/login' element={<Login/>}/>
         <Route path='/logout' element={<Logout />} />
