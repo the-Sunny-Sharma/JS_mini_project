@@ -26,8 +26,8 @@
 
 .slideshowDot {
   display: inline-block;
-  height: 20px;
-  width: 20px;
+  height: 8px;
+  width: 8px;
   border-radius: 50%;
 
   cursor: pointer;
@@ -39,3 +39,10 @@
 .slideshowDot.active {
   background-color: #6a0dad;
 }
+
+/* Add responsive styles for images */
+.slide img {
+  width: 100%;
+  height: auto;
+}
+

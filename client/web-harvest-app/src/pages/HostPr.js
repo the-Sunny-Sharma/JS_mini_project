@@ -3,6 +3,7 @@ import "../styles/hostpr.css";
 import React, { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import Footer from "../components/Footer";
+import axios from "axios";
 
 export default function HostPr() {
   const [un, setUn] = useState("");
@@ -23,9 +24,10 @@ export default function HostPr() {
   const [perQtyUnit, setPerQtyUnit] = useState("");
   const [totQty, setTotQty] = useState("");
   const [totQtyUnit, setTotQtyUnit] = useState("");
+  const [msg, setMsg] = useState("");
 
   const [selectedFile, setSelectedFile] = useState(null);
-  const [selectedFileName, setSelectedFileName] = useState(null);
+  const [selectedFileName, setSelectedFileName] = useState("");
 
   const hProductName = (event) => {
     setProductName(event.target.value);
@@ -67,6 +69,35 @@ export default function HostPr() {
     setSelectedFileName(null);
   };
 
+  const saveProdInfo = (event) => {
+    event.preventDefault();
+    let prodData = {
+      productname,
+      description,
+      mobile,
+      amt,
+      perQty,
+      perQtyUnit,
+      totQty,
+      totQtyUnit,
+    };
+    let url = "http://localhost:9000/saveProdInfo";
+    axios.post(url, prodData)
+    .then((res) => {
+      setMsg("Product added successfully!");
+      setProductName("");
+      setDescription("");
+      setMobile("");
+      setAmt("");
+      setPerQty("");
+      setPerQtyUnit("");
+      setTotQty("");
+      setTotQtyUnit("");
+      clearSelectedImage();
+    })
+    .catch(err => setMsg("Issue: " + err));
+  };
+
   const clear = (event) => {
     event.preventDefault();
     setProductName("");
@@ -78,31 +109,30 @@ export default function HostPr() {
     setTotQty("");
     setTotQtyUnit("");
     clearSelectedImage();
+    rProductName.current.focus();
+    return;
   };
 
   return (
     <>
       <Navbar />
-      <div className="full-page">
-      <div className="h2"><h2>Add a New Product- {un}</h2></div>
-    
-      <form className="main-form">
+      <h2>Add a new product- {un}</h2>
+      <form onSubmit={saveProdInfo}>
         <div>
-          <label className="p-name">Enter product name: </label>
-          <div className="name-ex">
-          <input 
+          <label>Enter product name: </label>
+          <input
             type="text"
-            placeholder="Ex. Ram Sharma"
+            placeholder="Ex. Tomato"
             onChange={hProductName}
             value={productname}
             ref={rProductName}
-          /></div>
+          />
         </div>
-        <div className="f-des">
-          <div className="des">
-            <label className="des-in">Description: </label>
+        <div>
+          <div>
+            <label>Description: </label>
           </div>
-          <textarea className="main-d"
+          <textarea
             placeholder="Ex. Fresh Tomatos from Bhanjanlal Farms Pvt. Ltd."
             onChange={hDescription}
             value={description}
@@ -179,8 +209,8 @@ export default function HostPr() {
           <input type="submit" value="Add Product" />
         </div>
         <button onClick={clear}>Clear All</button>
+        <p>{msg}</p>
       </form>
-      </div>
       <Footer />
     </>
   );

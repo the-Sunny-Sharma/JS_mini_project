@@ -25,7 +25,6 @@ function Navbar() {
         </div>
         <div className="cart-log">
           <Link to="/cart">
-            
               {ctg !== "farmer" && (
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -95,11 +94,6 @@ function Navbar() {
                 )}
               </li>
               {/* common- setting  */}
-              <li>
-                <Link to="/settings" className="link">
-                  Settings
-                </Link>
-              </li>
               {/* common- login  */}
               <li>
                 {un == null && (

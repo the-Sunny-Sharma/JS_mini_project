@@ -14,6 +14,7 @@ import Forgotpass from './pages/Forgotpass';
 import Products from './pages/Products';
 import Dashboard from './pages/Dashboard';
 import ManageProduct from './pages/ManageProduct';
+import UpdateProd from './pages/UpdateProd';
 
 function App() {
   return (
@@ -24,7 +25,6 @@ function App() {
         <Route path='/history' element={<History />}/>
         <Route path='/yourproduct' element={<HostPr />}/>
         <Route path='/manageprod' element={<ManageProduct />} />
-        <Route path='/settings' element={<Setting />}/>
         <Route path='/signup' element={<SignUp />}/>
         <Route path='/login' element={<Login/>}/>
         <Route path='/logout' element={<Logout />} />
@@ -32,6 +32,7 @@ function App() {
         <Route path='/forgotpass' element={<Forgotpass />} />
         <Route path='/products' element={<Products />} />
         <Route path='/dashboard' element={<Dashboard />}/>
+        <Route path='/updateprod' element={<UpdateProd />} />
         <Route path='*' element={<Page404/>}/>
       </Routes>
       
