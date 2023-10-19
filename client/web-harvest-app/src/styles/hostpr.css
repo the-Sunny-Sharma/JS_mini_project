@@ -8,3 +8,68 @@ input[type="number"]::-webkit-outer-spin-button {
 input[type="number"] {
   -moz-appearance: textfield; /* Firefox */
 }
+
+.title-add {
+  font-size: 1.3em;
+  text-align: center;
+  font-family: monospace;
+}
+
+.add-prod-container {
+  background-image: linear-gradient(#55db30,#0aef80,#41daee, #363cef);
+}
+
+.add-pr-form {
+  /* width: 60%;
+  margin: auto; */
+}
+.desc-addpr {
+  display: inline;
+}
+
+.textarea-add {
+  display: inline;
+  resize: none;
+}
+
+.row-add {
+  margin: 10px;
+
+}
+.add-pr-form {
+  padding: 20px;
+  width: 50%;
+  background-color: aliceblue;
+  margin: auto;
+  
+}
+
+@media only screen and (max-width: 800px){
+  .add-pr-form {
+    width: 80%;
+  }
+}
+ .btn-add-pr {
+  display: inline;
+  margin: 20px;
+  /* width: 100%; */
+ }
+
+ .clr-add-pr {
+  background-color: blue;
+  color: white;
+  font-weight: 700;
+  padding: 10px;
+ }
+
+ .save-add-pr {
+  background-color: #f32529;
+  color: white;
+  font-weight: 700;
+  padding: 10px;
+ }
+
+ .center-btn {
+  width: 100%;
+  margin: auto;
+ }
