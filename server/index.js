@@ -1,9 +1,11 @@
 const express = require("express");
 const cors = require("cors");
 const { MongoClient } = require("mongodb");
+
 const app = express();
 app.use(cors());
 app.use(express.json());
+
 app.post("/saveProdInfo", (req, res) => {
   const url = "mongodb://0.0.0.0:27017";
   const client = new MongoClient(url);
@@ -30,21 +32,48 @@ app.get("/getProdData", (req, res) => {
   const client = new MongoClient(url);
   const db = client.db("webharvester");
   const coll = db.collection("addedProds");
-  coll.find({}).toArray()
-  .then(result => res.send(result))
-  .catch(error => res.send(error));
-})
+  coll
+    .find({})
+    .toArray()
+    .then((result) => res.send(result))
+    .catch((error) => res.send(error));
+});
 
 app.delete("/rmProdData", (req, res) => {
   const url = "mongodb://0.0.0.0:27017";
   const client = new MongoClient(url);
   const db = client.db("webharvester");
   const coll = db.collection("addedProds");
-  const data = {"productname":req.body.productname};
-  coll.deleteOne(data)
-  .then(result => res.send(result))
-  .catch(error => res.send(error));
-})
+  const data = { productname: req.body.productname };
+  coll
+    .deleteOne(data)
+    .then((result) => res.send(result))
+    .catch((error) => res.send(error));
+});
+
+app.put("/modifyProdInfo", (req, res) => {
+  const url = "mongodb://0.0.0.0:27017";
+  const client = new MongoClient(url);
+  const db = client.db("webharvester");
+  const coll = db.collection("addedProds");
+  coll
+    .updateOne(
+      { "productname": req.body.productname },
+      {
+        "$set": {
+          "description": req.body.description,
+          "mobile": req.body.mobile,
+          "amt": req.body.amt,
+          "perQty": req.body.perQty,
+          "perQtyUnit": req.body.perQtyUnit,
+          "totQty": req.body.totQty,
+          "totQtyUnit": req.body.totQtyUnit,
+        }
+      }
+    )
+    .then((result) => res.send(result))
+    .catch((error) => res.send(error));
+});
 
 app.listen(9000, () => {
   console.log("ready to serve @ 9000");

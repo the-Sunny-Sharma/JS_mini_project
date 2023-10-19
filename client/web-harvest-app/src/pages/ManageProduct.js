@@ -1,10 +1,10 @@
 import Navbar from "../components/Navbar";
-
 import "../styles/ManageProduct.css";
-
 import Footer from "../components/Footer";
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useEffect, useState} from "react";
+import { useNavigate } from "react-router-dom";
+
 
 export default function ManageProduct() {
   const [data, setData] = useState([]);
@@ -15,6 +15,11 @@ export default function ManageProduct() {
     .then(res => setData(res.data))
     .catch(err => alert("Issue: "+err));
   },[]);
+
+  const nav = useNavigate();
+  const updateProds = (productname, description, mobile, amt, perQty, perQtyUnit, totQty, totQtyUnit) => {
+      nav("/updateprod", {state : {productname,description, mobile, amt, perQty, perQtyUnit, totQty, totQtyUnit}})
+  }
 
   const delProd = (productname) => {
     let url = "http://localhost:9000/rmProdData";
@@ -61,7 +66,9 @@ export default function ManageProduct() {
                   <td>{e.totQty}</td>
                   <td>{e.totQtyUnit}</td>
                   <td>
-                <button>Update</button>
+                <button onClick={() => {
+                  updateProds( e.productname, e.description, e.mobile, e.amt, e.perQty, e.perQtyUnit, e.totQty, e.totQtyUnit)
+                }}>Update</button>
               </td>
               <td>
                 <button onClick={() => {
