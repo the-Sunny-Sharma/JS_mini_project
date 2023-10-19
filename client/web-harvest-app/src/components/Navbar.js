@@ -94,11 +94,6 @@ function Navbar() {
                 )}
               </li>
               {/* common- setting  */}
-              <li>
-                <Link to="/settings" className="link">
-                  Settings
-                </Link>
-              </li>
               {/* common- login  */}
               <li>
                 {un == null && (
