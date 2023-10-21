@@ -6,20 +6,20 @@ import '../styles/product.css';
 
 export default function Products() {
   const navigate = useNavigate();
+  const [un, setUn] = useState("");
+
   useEffect(() => {
     let un = localStorage.getItem("un");
     if (un == null) navigate("/login");
     else setUn(un);
   }, []);
 
-  const [un, setUn] = useState("");
-
   return (
     <>
-      <Navbarv2 />
+      <Navbarv2/>
       <div className="prod-main-wrapper">
         <p className="prod-title">Buy Fresh. Stay healthy.</p>
-        <BuyCards />
+        <BuyCards/>
       </div>
     </>
   );
