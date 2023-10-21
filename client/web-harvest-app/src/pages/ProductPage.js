@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import Navbar from "../components/Navbar";
+import Navbarv2 from "../components/Navbarv2";
 import Footer from "../components/Footer";
 export default function HCards() {
   const [data, setData] = useState([]);
@@ -13,7 +13,7 @@ export default function HCards() {
   },[]);
   return(
     <>
-        <Navbar />
+        <Navbarv2 />
         <div>
         
         </div>

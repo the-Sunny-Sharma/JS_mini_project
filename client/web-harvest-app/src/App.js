@@ -15,6 +15,8 @@ import Products from './pages/Products';
 import Dashboard from './pages/Dashboard';
 import ManageProduct from './pages/ManageProduct';
 import UpdateProd from './pages/UpdateProd';
+import Profile from './pages/Profile';
+import AddToCart from './pages/AddToCart';
 
 function App() {
   return (
@@ -33,6 +35,8 @@ function App() {
         <Route path='/products' element={<Products />} />
         <Route path='/dashboard' element={<Dashboard />}/>
         <Route path='/updateprod' element={<UpdateProd />} />
+        <Route path='/profile' element={<Profile/>} />
+        <Route path='/cart' element={<AddToCart />} />
         <Route path='*' element={<Page404/>}/>
       </Routes>
       

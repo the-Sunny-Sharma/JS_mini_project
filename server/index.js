@@ -20,6 +20,7 @@ app.post("/saveProdInfo", (req, res) => {
     perQtyUnit: req.body.perQtyUnit,
     totQty: req.body.totQty,
     totQtyUnit: req.body.totQtyUnit,
+    imgLink: req.body.imgLink,
   };
   coll
     .insertOne(record)
@@ -68,12 +69,32 @@ app.put("/modifyProdInfo", (req, res) => {
           "perQtyUnit": req.body.perQtyUnit,
           "totQty": req.body.totQty,
           "totQtyUnit": req.body.totQtyUnit,
+          "imgLink": req.body.imgLink,
         }
       }
     )
     .then((result) => res.send(result))
     .catch((error) => res.send(error));
 });
+
+// app.post("/addProdToCart", (req, res) => {
+//   const url = "mongodb://0.0.0.0:27017";
+//   const client = new MongoClient(url);
+//   const db = client.db("userCart");
+//   const coll = db.collection("Products");
+//   const record = {
+//     productname: req.body.productname,
+//     description: req.body.description,
+//     amt: req.body.amt,
+//     perQty: req.body.perQty,
+//     perQtyUnit: req.body.perQtyUnit,
+//     imgLink: req.body.imgLink,
+//   };
+//   coll
+//     .insertOne(record)
+//     .then((result) => res.send(result))
+//     .catch((error) => res.send(error));
+// });
 
 app.listen(9000, () => {
   console.log("ready to serve @ 9000");

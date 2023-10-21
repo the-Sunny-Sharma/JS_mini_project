@@ -1,5 +1,5 @@
 import { getAuth, sendPasswordResetEmail } from 'firebase/auth';
-import Navbar from '../components/Navbar';
+import Navbarv2 from '../components/Navbarv2';
 import { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../styles/forgotP.css';
@@ -29,7 +29,7 @@ export default function Forgotpass()
     }
     return(
         <>
-        <Navbar/>
+        <Navbarv2 />
 
         <div className='main-div-fp'>
             <div className='l-form-fp'>

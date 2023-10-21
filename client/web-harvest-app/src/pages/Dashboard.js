@@ -1,13 +1,14 @@
-import Navbar from "../components/Navbar";
+// import Navbar from "../components/Navbar";
 import "../styles/dashboard.css";
 import Footer from "../components/Footer";
+import Navbarv2 from "../components/Navbarv2";
 
 export default function Dashboard() {
   return (
     <>
       <div>
-        <Navbar />
-        <div className="main-dash">
+        <Navbarv2 />
+        <div className="main-dash dash-top">
           <h1>Dashboard</h1>
           <div className="d-card-container">
             <div className="card-dash">
