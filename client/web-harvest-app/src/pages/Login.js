@@ -1,7 +1,8 @@
 import { useState, useRef, useEffect } from "react";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { Link, useNavigate } from "react-router-dom";
-import Navbar from "../components/Navbar";
+// import Navbar from "../components/Navbar";
+import Navbarv2 from "../components/Navbarv2";
 import "../styles/login.css";
 import app from '../components/Firebase';
 
@@ -41,7 +42,7 @@ export default function Login() {
   };
   return (
     <>
-      <Navbar />
+      <Navbarv2 />
       <div className="main-div-login">
         <div class="l-form--login">
           <h1 className="wel">Welcome Again!!</h1>

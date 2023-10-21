@@ -3,7 +3,7 @@ import { useState, useRef, useEffect } from "react";
 import app from "../components/Firebase";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { useNavigate, Link } from "react-router-dom";
-import Navbar from "../components/Navbar";
+import Navbarv2 from "../components/Navbarv2";
 
 export default function SignUp() {
   const navigate = useNavigate();
@@ -41,7 +41,7 @@ export default function SignUp() {
   };
   return (
     <>
-      <Navbar />
+      <Navbarv2 />
       <div className="main-div-signup">
         <form onSubmit={save}>
           <div className="l-form-su">

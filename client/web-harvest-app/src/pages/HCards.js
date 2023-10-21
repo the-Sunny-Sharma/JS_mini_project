@@ -18,7 +18,7 @@ export default function HCards() {
     <p>New Arrivals</p>
       <div className="col card-grid">
         {data.map((e) => (
-          <DisCard  imgSrc="https://d1sl07a7h3d3fr.cloudfront.net/common/master/farmeros_78.jpg" 
+          <DisCard  imgSrc={e.imgLink} 
           imgAlt= "Image"
           title = {e.productname}
           qty={e.perQty +" "+ e.perQtyUnit}

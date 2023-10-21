@@ -9,6 +9,11 @@ input[type="number"] {
   -moz-appearance: textfield; /* Firefox */
 }
 
+.main-add-pr {
+  margin-top: 130px;
+  padding: 50px;
+}
+
 .title-add {
   font-size: 1.3em;
   text-align: center;
@@ -16,13 +21,9 @@ input[type="number"] {
 }
 
 .add-prod-container {
-  background-image: linear-gradient(#55db30,#0aef80,#41daee, #363cef);
+  background-image: linear-gradient(#30bcdb,#1b7eda,#138a9a, #363cef);
 }
 
-.add-pr-form {
-  /* width: 60%;
-  margin: auto; */
-}
 .desc-addpr {
   display: inline;
 }
@@ -56,15 +57,15 @@ input[type="number"] {
  }
 
  .clr-add-pr {
-  background-color: blue;
-  color: white;
+  background-color: yellow;
+  color: rgb(24, 26, 34);
   font-weight: 700;
   padding: 10px;
  }
 
  .save-add-pr {
-  background-color: #f32529;
-  color: white;
+  background-color: #07ff39;
+  color: rgb(24, 26, 34);
   font-weight: 700;
   padding: 10px;
  }

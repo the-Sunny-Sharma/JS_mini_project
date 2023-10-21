@@ -1,9 +1,10 @@
-import Navbar from "../components/Navbar";
+// import Navbar from "../components/Navbar";
 import "../styles/hostpr.css";
 import React, { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import Footer from "../components/Footer";
 import axios from "axios";
+import Navbarv2 from "../components/Navbarv2";
 
 export default function HostPr() {
   const [un, setUn] = useState("");
@@ -24,6 +25,7 @@ export default function HostPr() {
   const [perQtyUnit, setPerQtyUnit] = useState("");
   const [totQty, setTotQty] = useState("");
   const [totQtyUnit, setTotQtyUnit] = useState("");
+  const [imgLink, setImgLink ] = useState("");
   const [msg, setMsg] = useState("");
 
   const [selectedFile, setSelectedFile] = useState(null);
@@ -53,6 +55,9 @@ export default function HostPr() {
   const hTotQtyUnit = (event) => {
     setTotQtyUnit(event.target.value);
   };
+  const hImgLink = (event) => {
+    setImgLink(event.target.value);
+  }
 
   const handleChange = (e) => {
     if (e.target.files.length > 0) {
@@ -80,6 +85,7 @@ export default function HostPr() {
       perQtyUnit,
       totQty,
       totQtyUnit,
+      imgLink,
     };
     let url = "http://localhost:9000/saveProdInfo";
     axios
@@ -94,6 +100,7 @@ export default function HostPr() {
         setPerQtyUnit("");
         setTotQty("");
         setTotQtyUnit("");
+        setImgLink("");
         clearSelectedImage();
       })
       .catch((err) => setMsg("Issue: " + err));
@@ -109,6 +116,7 @@ export default function HostPr() {
     setPerQtyUnit("");
     setTotQty("");
     setTotQtyUnit("");
+    setImgLink("");
     clearSelectedImage();
     rProductName.current.focus();
     return;
@@ -116,10 +124,10 @@ export default function HostPr() {
 
   return (
     <>
-      <Navbar />
-      <div className="add-prod-container">
-        <p className="title-add">Add a new product- {un}</p>
-        <div className="add-pr-form">
+      <Navbarv2 />
+      <div className="add-prod-container main-add-pr">
+        <p className="title-add ">Add a new product- {un}</p>
+        <div className="add-pr-form ">
           <form onSubmit={saveProdInfo}>
             <div className="row-add">
               <label>Enter product name: </label>
@@ -197,6 +205,15 @@ export default function HostPr() {
                 placeholder="Kg"
                 onChange={hTotQtyUnit}
                 value={totQtyUnit}
+              />
+            </div>
+            <div className="row-add">
+              <label>Link of Image: </label>
+              <input
+                type="text"
+                placeholder="Ex. htps://unsplash.com/tomato"
+                onChange={hImgLink}
+                value={imgLink}
               />
             </div>
             <div className="row-add">
