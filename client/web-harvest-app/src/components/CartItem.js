@@ -7,74 +7,66 @@ import { CartCard } from "./CartCard";
 
 export default function CardItem() {
   const [data, setData] = useState([]);
+  const [totalPrice, setTotalPrice] = useState(0);
 
   useEffect(() => {
     let url = "http://localhost:9000/getProdToCart";
     axios
       .get(url)
-      .then((res) => setData(res.data))
+      .then((res) => {
+        setData(res.data);
+        // Calculate the total price here
+        const totalPrice = res.data.reduce((acc, item) => acc + item.totPrice, 0);
+        setTotalPrice(totalPrice);
+      })
       .catch((err) => alert("Issue: " + err));
   }, []);
+
+  const delProdFromCart = (prodId) => {
+    let url = "http://localhost:9000/delProdFromCart";
+    let d = { data: { prodId } };
+    axios
+      .delete(url, d)
+      .then((res) => {
+        alert("Removed from Cart.");
+        window.location.reload();
+      })
+      .catch((err) => alert("Issue: " + err));
+  };
+
   return (
     <>
       <div className="checkout-card-wapper">
         <div class="container-fluid">
-        {data.map((e) => (
-          <div class="row">
-            <div class="col-12 mt-3">
-              <div class="card card-width">
-                
+          {data.map((e) => (
+            <div class="row" key={e.prodId}>
+              <div class="col-12 mt-3">
+                <div class="card card-width">
                   <CartCard
+                    prodId={e.prodId}
                     imgSrc={e.imgSrc}
                     title={e.title}
-                    qty={e.qty }
-                    amt={ e.amt}
+                    qty={e.qty}
+                    amt={e.amt}
+                    totQtyAdd={e.totQtyAdd}
                   />
-                <div class="card-footer">
-                  <small class="text-muted">
-                    <button>Remove</button>
-                  </small>
+                  <div class="card-footer">
+                    <small class="text-muted">
+                      <button
+                        onClick={() => {
+                          if (window.confirm("Remove from cart?"))
+                            delProdFromCart(e.prodId);
+                        }}
+                      >
+                        Remove
+                      </button>
+                    </small>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-                          ))}
+          ))}
         </div>
-        
-        {/* <div class="container-fluid">
-          <div class="row">
-            <div class="col-12 mt-3">
-              <div class="card card-width">
-                <div class="card-horizontal">
-                  <div class="img-square-wrapper">
-                    <img
-                      class=""
-                      src="http://via.placeholder.com/300x180"
-                      alt="Card image cap"
-                    />
-                  </div>
-                  <div class="card-body card-center">
-                    <h4 class="card-title">Tomato</h4>
-                    <p class="card-text">1 Kg</p>
-                  </div>
-                  <div class="card-body card-center">
-                    <h4 class="card-title">₹ 40.00</h4>
-                    <p class="card-text">Total Quantity: 5</p>
-                  </div>
-                  <div class="card-body card-center">
-                    <h4 class="card-title">₹ 200.00</h4>
-                    <p class="card-text"></p>
-                  </div>
-                </div>
-                <div class="card-footer">
-                  <small class="text-muted">
-                    <button>Remove</button>
-                  </small>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div> */}
         <div class="container-fluid">
           <div class="row">
             <div class="col-12 mt-3">
@@ -82,10 +74,10 @@ export default function CardItem() {
                 <div class="card-horizontal">
                   <div class="card-body">
                     <h4 class="card-title">Total</h4>
-                    <p class="card-text ">5 Items</p>
+                    <p class="card-text">{data.length} Items</p>
                   </div>
                   <div class="card-body">
-                    <h4 class="card-title">₹ 400.00</h4>
+                    <h4 class="card-title">₹ {totalPrice.toFixed(2)}</h4>
                   </div>
                 </div>
 
@@ -99,4 +91,4 @@ export default function CardItem() {
       </div>
     </>
   );
-};
+}

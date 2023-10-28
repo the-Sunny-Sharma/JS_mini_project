@@ -17,6 +17,7 @@ export default function HostPr() {
 
   const rProductName = useRef();
 
+  const [prodId, setProdId] = useState("");
   const [productname, setProductName] = useState("");
   const [description, setDescription] = useState("");
   const [mobile, setMobile] = useState("");
@@ -31,6 +32,9 @@ export default function HostPr() {
   const [selectedFile, setSelectedFile] = useState(null);
   const [selectedFileName, setSelectedFileName] = useState("");
 
+  const hProdId = (event) => {
+    setProdId(event.target.value);
+  };
   const hProductName = (event) => {
     setProductName(event.target.value);
   };
@@ -77,6 +81,8 @@ export default function HostPr() {
   const saveProdInfo = (event) => {
     event.preventDefault();
     let prodData = {
+      un,
+      prodId,
       productname,
       description,
       mobile,
@@ -92,6 +98,7 @@ export default function HostPr() {
       .post(url, prodData)
       .then((res) => {
         setMsg("Product added successfully!");
+        setProdId("");
         setProductName("");
         setDescription("");
         setMobile("");
@@ -108,6 +115,7 @@ export default function HostPr() {
 
   const clear = (event) => {
     event.preventDefault();
+    setProdId("");
     setProductName("");
     setDescription("");
     setMobile("");
@@ -129,6 +137,16 @@ export default function HostPr() {
         <p className="title-add ">Add a new product- {un}</p>
         <div className="add-pr-form ">
           <form onSubmit={saveProdInfo}>
+          <div className="row-add">
+              <label>Create a Product Id: </label>
+              <input
+                type="text"
+                placeholder="Ex. B12"
+                onChange={hProdId}
+                value={prodId}
+                required
+              />
+            </div>
             <div className="row-add">
               <label>Enter product name: </label>
               <input
@@ -137,6 +155,7 @@ export default function HostPr() {
                 onChange={hProductName}
                 value={productname}
                 ref={rProductName}
+                required
               />
             </div>
             <div className="row-add">
@@ -159,6 +178,7 @@ export default function HostPr() {
                 placeholder="1234567890"
                 onChange={hMobile}
                 value={mobile}
+                required
               />
             </div>
             <div>
@@ -169,6 +189,7 @@ export default function HostPr() {
                 placeholder="30.50"
                 onChange={hAmt}
                 value={amt}
+                required
               />
             </div>
             <div className="row-add">
@@ -178,6 +199,7 @@ export default function HostPr() {
                 placeholder="1"
                 onChange={hPerQty}
                 value={perQty}
+                required
               />
             </div>
             <div className="row-add">
@@ -187,6 +209,7 @@ export default function HostPr() {
                 placeholder="Kg"
                 onChange={hPerQtyUnit}
                 value={perQtyUnit}
+                required
               />
             </div>
             <div className="row-add">
@@ -196,6 +219,7 @@ export default function HostPr() {
                 placeholder="1000"
                 onChange={hTotQty}
                 value={totQty}
+                required
               />
             </div>
             <div className="row-add">
@@ -205,6 +229,7 @@ export default function HostPr() {
                 placeholder="Kg"
                 onChange={hTotQtyUnit}
                 value={totQtyUnit}
+                required
               />
             </div>
             <div className="row-add">
