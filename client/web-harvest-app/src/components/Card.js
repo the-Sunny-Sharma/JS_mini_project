@@ -1,7 +1,6 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "../styles/card.css";
 import "../styles/adder.css";
-// import Adder from "./Adder";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
