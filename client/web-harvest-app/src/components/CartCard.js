@@ -3,7 +3,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
-export const CartCard = ({ imgSrc, title, qty, amt }) => {
+export const CartCard = ({ imgSrc, title, qty, amt , prodId, totQtyAdd}) => {
   const navigate = useNavigate();
 
   return (
@@ -28,12 +28,12 @@ export const CartCard = ({ imgSrc, title, qty, amt }) => {
                 </div>
                 <div class="card-body card-center">
                 {amt && 
-                  <h4 class="card-title">{amt}</h4>
+                  <h4 class="card-title">₹ {amt}</h4>
                 }
-                  <p class="card-text">Total Quantity: xx</p>
+                  <p class="card-text">Total Quantity: {totQtyAdd}</p>
                 </div>
                 <div class="card-body card-center">
-                  <h4 class="card-title">₹ 200.00</h4>
+                  <h4 class="card-title">₹ {parseFloat(amt.replace('₹', '')) * totQtyAdd}</h4>
                   <p class="card-text"></p>
                 </div>
               </div>

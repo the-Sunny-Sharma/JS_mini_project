@@ -14,9 +14,12 @@ export default function UpdateProd() {
     else setUn(un);
   }, []);
 
-  const rProductName = useRef();
+  const rAmt = useRef();
+
+  const [prodId, setProdId] = useState("");
 
   useEffect(() => {
+    setProdId(loc.state.prodId);
     setProductName(loc.state.productname);
     setDescription(loc.state.description);
     setMobile(loc.state.mobile);
@@ -41,6 +44,10 @@ export default function UpdateProd() {
 
   const [selectedFile, setSelectedFile] = useState(null);
   const [selectedFileName, setSelectedFileName] = useState("");
+
+  const hProdId = (event) => {
+    setProdId(event.target.value);
+  };
 
   const hProductName = (event) => {
     setProductName(event.target.value);
@@ -88,6 +95,8 @@ export default function UpdateProd() {
   const updateProd = (event) => {
     event.preventDefault();
     let prodData = {
+      un,
+      prodId,
       productname,
       description,
       mobile,
@@ -110,7 +119,6 @@ export default function UpdateProd() {
 
   const clear = (event) => {
     event.preventDefault();
-    setProductName("");
     setDescription("");
     setMobile("");
     setAmt("");
@@ -118,9 +126,9 @@ export default function UpdateProd() {
     setPerQtyUnit("");
     setTotQty("");
     setTotQtyUnit("");
-    imgLink("");
+    setImgLink("");
     clearSelectedImage();
-    rProductName.current.focus();
+    rAmt.current.focus();
     return;
   };
 
@@ -131,14 +139,21 @@ export default function UpdateProd() {
         <h2 className="title-add">Update product</h2>
         <div className="add-pr-form ">
           <form onSubmit={updateProd}>
+          <div className="row-add">
+              <label>Product ID: </label>
+              <input
+                type="text"
+                onChange={hProdId}
+                value={prodId}
+                disabled={true}
+              />
+            </div>
             <div className="row-add">
               <label>Enter product name: </label>
               <input
                 type="text"
-                placeholder="Ex. Tomato"
                 onChange={hProductName}
                 value={productname}
-                ref={rProductName}
                 disabled={true}
               />
             </div>
@@ -170,6 +185,7 @@ export default function UpdateProd() {
                 placeholder="30.50"
                 onChange={hAmt}
                 value={amt}
+                ref={rAmt}
               />
             </div>
             <div className="row-add">

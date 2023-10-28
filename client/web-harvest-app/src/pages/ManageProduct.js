@@ -7,18 +7,25 @@ import { useNavigate } from "react-router-dom";
 import Navbarv2 from "../components/Navbarv2";
 
 export default function ManageProduct() {
-  const [data, setData] = useState([]);
-
+  const [un, setUn] = useState("");
+  const navigate = useNavigate();
   useEffect(() => {
-    let url = "http://localhost:9000/getProdData";
+    let un = localStorage.getItem("un");
+    if (un == null) navigate("/login");
+    else setUn(un);
+    let url = "http://localhost:9000/getProdDataFarm";
+    let username = { username : un};
     axios
-      .get(url)
+      .get(url, {params: username})
       .then((res) => setData(res.data))
       .catch((err) => alert("Issue: " + err));
   }, []);
 
+  const [data, setData] = useState([]);
+
   const nav = useNavigate();
   const updateProds = (
+    prodId,
     productname,
     description,
     mobile,
@@ -31,6 +38,7 @@ export default function ManageProduct() {
   ) => {
     nav("/updateprod", {
       state: {
+        prodId,
         productname,
         description,
         mobile,
@@ -44,9 +52,9 @@ export default function ManageProduct() {
     });
   };
 
-  const delProd = (productname) => {
+  const delProd = (prodId) => {
     let url = "http://localhost:9000/rmProdData";
-    let d = { data: { productname } };
+    let d = { data: { prodId } };
     axios
       .delete(url, d)
       .then((res) => {
@@ -67,22 +75,23 @@ export default function ManageProduct() {
           <table border="5" className="main-table" style={{ width: "50%" }}>
             <thead>
               <tr>
-                <th>SR-NO.</th>
+                <th>Product ID</th>
                 <th>Image</th>
-                <th>product-name</th>
+                <th>Product Name</th>
                 <th>Price</th>
-                <th>Segment.</th>
+                <th>Segment</th>
                 <th>Unit</th>
-                <th>Total-Qty.</th>
+                <th>Total Quantity</th>
                 <th>Unit</th>
                 <th>Update</th>
-                <th>delete</th>
+                <th>Delete</th>
               </tr>
             </thead>
             <tbody>
               {data.map((e) => (
                 <tr style={{ textAlign: "center" }}>
-                  <td>{e.mobile}</td>
+                  <td>{e.prodId}</td>
+                  {/* <td>{e.un}</td> */}
                   <td>
                     <img
                       src={e.imgLink}
@@ -102,6 +111,7 @@ export default function ManageProduct() {
                     className="upd-manage"
                       onClick={() => {
                         updateProds(
+                          e.prodId,
                           e.productname,
                           e.description,
                           e.mobile,
@@ -124,7 +134,7 @@ export default function ManageProduct() {
                         if (
                           window.confirm("Are you sure to delete this product?")
                         )
-                          delProd(e.productname);
+                          delProd(e.prodId);
                       }}
                     >
                       Delete
