@@ -1,4 +1,4 @@
-import Navbar from "../components/Navbar";
+import Navbarv2 from "../components/Navbarv2";
 import { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { getAuth, updatePassword, onAuthStateChanged } from "firebase/auth";
@@ -44,7 +44,7 @@ export default function ChangePass() {
 
   return (
     <>
-        <Navbar />
+        <Navbarv2 />
         <div className="main-div-cp">
           <div className="main-container-cp">
           <h3 className="greet-cp">Hii, {un}</h3>

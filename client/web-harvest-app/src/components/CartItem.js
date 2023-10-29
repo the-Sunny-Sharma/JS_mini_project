@@ -1,14 +1,14 @@
 import "../styles/carditem.css";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
 import React from "react";
 import { useState, useEffect } from "react";
 import { CartCard } from "./CartCard";
+import { useNavigate } from "react-router-dom"; 
 
 export default function CardItem() {
   const [data, setData] = useState([]);
   const [totalPrice, setTotalPrice] = useState(0);
-
+  const navigate = useNavigate();
   useEffect(() => {
     let url = "http://localhost:9000/getProdToCart";
     axios
@@ -21,6 +21,12 @@ export default function CardItem() {
       })
       .catch((err) => alert("Issue: " + err));
   }, []);
+
+  const checkout = () => {
+    localStorage.setItem('NoItems', data.length);
+    localStorage.setItem('TotalBill', totalPrice);
+    navigate("/checkout");
+  }
 
   const delProdFromCart = (prodId) => {
     let url = "http://localhost:9000/delProdFromCart";
@@ -82,7 +88,7 @@ export default function CardItem() {
                 </div>
 
                 <div class="card-footer">
-                  <button class="checkout-btn">Checkout</button>
+                  <button class="checkout-btn" onClick={checkout}>Checkout</button>
                 </div>
               </div>
             </div>

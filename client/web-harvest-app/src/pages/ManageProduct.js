@@ -1,4 +1,3 @@
-// import Navbar from "../components/Navbar";
 import "../styles/ManageProduct.css";
 import Footer from "../components/Footer";
 import axios from "axios";

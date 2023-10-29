@@ -1,10 +1,5 @@
-import React, { useEffect } from "react";
-import axios from "axios";
-import { useNavigate } from "react-router-dom";
-import { useState } from "react";
 
 export const CartCard = ({ imgSrc, title, qty, amt , prodId, totQtyAdd}) => {
-  const navigate = useNavigate();
 
   return (
     <div class="card-horizontal">
@@ -12,7 +7,7 @@ export const CartCard = ({ imgSrc, title, qty, amt , prodId, totQtyAdd}) => {
                 {imgSrc && (
                   <img
                     src={imgSrc}
-                    alt="Card image cap"
+                    alt={`Product: ${title}`} // You can describe the product
                     height='150'
                     width='150'
                   />

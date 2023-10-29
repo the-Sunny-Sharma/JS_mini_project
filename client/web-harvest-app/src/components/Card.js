@@ -1,7 +1,6 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "../styles/card.css";
 import "../styles/adder.css";
-// import Adder from "./Adder";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
@@ -41,6 +40,7 @@ export const Carder = ({ imgSrc, imgAlt, title, qty, amt , prodId,description, m
 
   return (
     <div className="card-container">
+      
       {imgSrc && imgAlt && (
         <img src={imgSrc} alt={imgAlt} className="card-img" />
       )}
