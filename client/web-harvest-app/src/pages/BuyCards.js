@@ -5,7 +5,6 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import "../styles/card.css";
 import "../styles/adder.css";
-// import AddToCart from "./AddToCart";
 
 export default function BuyCards() {
   const [data, setData] = useState([]);

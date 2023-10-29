@@ -40,6 +40,7 @@ export const Carder = ({ imgSrc, imgAlt, title, qty, amt , prodId,description, m
 
   return (
     <div className="card-container">
+      
       {imgSrc && imgAlt && (
         <img src={imgSrc} alt={imgAlt} className="card-img" />
       )}
