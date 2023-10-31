@@ -1,0 +1,40 @@
+.nav-checkout-status {
+    background-color: #9CFC97;
+    height: 100px;
+    margin-top: 80px;
+}
+
+.circle-num {
+    /* display: inline; */
+    font-size: 1.4rem;
+}
+
+.co-inline {
+    display: inline;
+    width: 30%;
+    position: fixed;
+    z-index: 1;
+    top: 90px;
+    overflow-x: hidden;
+}
+
+.co-split-left {
+    width: 33%;
+    margin-left: 20%;
+    text-align: center;
+}
+
+.co-split-mid {
+    width: 33%;
+    text-align: center;
+    margin-left: 40%;
+}
+.co-split-right {
+    width: 33%;
+    text-align: center;
+    margin-left: 60%;
+}
+
+.co-p {
+    font-size: 1.3em;
+}

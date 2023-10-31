@@ -13,7 +13,7 @@ export const DisCard = ({ imgSrc, imgAlt, title, qty, amt }) => {
         {title && <h1 className="card-title">{title}</h1>}
         {qty && <p className="card-description">{qty}</p>}
         {amt && <p className="card-description">{amt}</p>}
-        <Link to="/login" className="card-btn">
+        <Link to="/products" className="card-btn">
             Continue Shopping
           </Link>
       </div>
