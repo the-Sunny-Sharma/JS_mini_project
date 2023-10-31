@@ -18,6 +18,7 @@ import Profile from './pages/Profile';
 import AddToCart from './pages/AddToCart';
 import Checkout from './pages/Checkout';
 import ProductPage from './pages/ProductPage';
+import CheckoutAddress from './pages/CheckoutAddress';
 
 function App() {
   return (
@@ -39,6 +40,7 @@ function App() {
         <Route path='/profile' element={<Profile/>} />
         <Route path='/cart' element={<AddToCart />} />
         <Route path='/checkout' element={<Checkout/>}/>
+        <Route path='/checkpay' element={<CheckoutAddress/>}/>
         <Route path='/productpage' element={<ProductPage/>} />
         <Route path='*' element={<Page404/>}/>
       </Routes>
