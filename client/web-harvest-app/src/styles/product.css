@@ -1,0 +1,10 @@
+.prod-main-wrapper {
+    margin-top: 130px;
+    background-image: url("https://media.istockphoto.com/id/1128902732/vector/vegetables-hand-drawn-seamless-pattern.jpg?s=612x612&w=0&k=20&c=1mtF2otfvE_nMLOEVoYSGRIHK0fGDGgmT9ydCDEAKyM=");
+    padding: 10px;
+}
+
+.prod-title {
+    text-align: center;
+    font-size: 2em;
+}

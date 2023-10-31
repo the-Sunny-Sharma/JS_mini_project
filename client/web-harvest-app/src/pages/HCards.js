@@ -15,10 +15,10 @@ export default function HCards() {
     <>
      
     {/* <div className="cards"> */}
-    <p>New Arrivals</p>
+    <p><div className="newarr">New Arrivals</div></p>
       <div className="col card-grid">
         {data.map((e) => (
-          <DisCard  imgSrc="https://d1sl07a7h3d3fr.cloudfront.net/common/master/farmeros_78.jpg" 
+          <DisCard  imgSrc={e.imgLink} 
           imgAlt= "Image"
           title = {e.productname}
           qty={e.perQty +" "+ e.perQtyUnit}
@@ -54,7 +54,7 @@ export default function HCards() {
           amt="&#8377; 75.00"
         />
       </div>
-      <p>Best Deals</p>
+      <p><div className="bestdeal">Best Deals</div></p>
       <div className="col card-grid">
         <DisCard
           imgSrc="https://d1sl07a7h3d3fr.cloudfront.net/common/master/farmeros_78.jpg"
@@ -83,9 +83,37 @@ export default function HCards() {
           title="Onion"
           qty="1 Kg"
           amt="&#8377; 75.00"
+        />
+        <DisCard
+          imgSrc="https://d1sl07a7h3d3fr.cloudfront.net/common/master/farmeros_78.jpg"
+          imgAlt="Card Image 1"
+          title="Tomato"
+          qty="1 Kg"
+          amt="&#8377; 20.00"
+        />
+        <DisCard
+          imgSrc="https://d1sl07a7h3d3fr.cloudfront.net/common/master/farmeros_78.jpg"
+          imgAlt="Card Image 1"
+          title="Tomato"
+          qty="1 Kg"
+          amt="&#8377; 20.00"
+        />
+        <DisCard
+          imgSrc="https://d1sl07a7h3d3fr.cloudfront.net/common/master/farmeros_78.jpg"
+          imgAlt="Card Image 1"
+          title="Tomato"
+          qty="1 Kg"
+          amt="&#8377; 20.00"
+        />
+        <DisCard
+          imgSrc="https://d1sl07a7h3d3fr.cloudfront.net/common/master/farmeros_78.jpg"
+          imgAlt="Card Image 1"
+          title="Tomato"
+          qty="1 Kg"
+          amt="&#8377; 20.00"
         />
       </div>
-      <p>Best Sellers</p>
+      <p><div className="bestseller">Best Sellers</div></p>
       <div className="col card-grid">
         <DisCard
           imgSrc="https://d1sl07a7h3d3fr.cloudfront.net/common/master/farmeros_78.jpg"
@@ -114,6 +142,27 @@ export default function HCards() {
           title="Onion"
           qty="1 Kg"
           amt="&#8377; 75.00"
+        />
+        <DisCard
+          imgSrc="https://d1sl07a7h3d3fr.cloudfront.net/common/master/farmeros_78.jpg"
+          imgAlt="Card Image 1"
+          title="Tomato"
+          qty="1 Kg"
+          amt="&#8377; 20.00"
+        />
+        <DisCard
+          imgSrc="https://d1sl07a7h3d3fr.cloudfront.net/common/master/farmeros_78.jpg"
+          imgAlt="Card Image 1"
+          title="Tomato"
+          qty="1 Kg"
+          amt="&#8377; 20.00"
+        />
+        <DisCard
+          imgSrc="https://d1sl07a7h3d3fr.cloudfront.net/common/master/farmeros_78.jpg"
+          imgAlt="Card Image 1"
+          title="Tomato"
+          qty="1 Kg"
+          amt="&#8377; 20.00"
         />
         
       </div>

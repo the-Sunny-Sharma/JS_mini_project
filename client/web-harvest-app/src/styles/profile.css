@@ -1,0 +1,24 @@
+.profile-wrapper {
+    width: 60%;
+    margin: auto;
+    background-color: aqua;
+    margin-top: 200px;
+    padding: 50px;
+}
+
+.heading-prof {
+    text-align: center;
+}
+
+.prof-greet {
+    font-size: 1.5em;
+    text-align: center;
+}
+
+.btn-change-pass {
+    background-color: chartreuse;
+    width: 200px;
+    border-radius: 20px;
+    margin: auto;
+    margin-left: 35%;
+}

@@ -1,0 +1,155 @@
+.title {
+  font-size: 1.2em;
+  font-weight: 700;
+  color: white;
+  display: inline;
+  margin-top: 20px;
+}
+
+.link {
+  color: white;
+  font-size: 1em;
+  text-decoration: none;
+  margin: 3.5%;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+ul {
+  list-style-type: none;
+  display: inline;
+}
+
+ul li {
+  display: inline;
+  margin: 20px;
+  font-size: 1.2em;
+}
+
+ul li a:hover {
+  color: hwb(0 0% 100%) !important;
+  transition: 0.6s;
+}
+
+
+.split {
+  height: 80px;
+  width: 20%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.logo-left {
+  background-image: url(../assets/logo.png);
+  background-size: cover;
+  width: 60px;
+  height: 60px;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.mid {
+  width: 50%;
+  /* background-color: #f9f9f9; */
+  margin-left: 80px;
+}
+/* Control the left side */
+.left {
+  left: 0;
+  background-color: #f18484;
+}
+
+/* Control the right side */
+.right {
+  right: 0;
+  background-color: red;
+  width: 100px;
+}
+
+.login-new {
+  background-color: rgb(39, 39, 39);
+  border: none;
+  width: 90px;
+  margin-right: 150px;
+  height: fit-content;
+  border-radius: 60px;
+  text-align: center;
+  top: 20px;
+}
+
+.img-login {
+  margin-right: 4px;
+}
+.nav-line {
+  background-color: #45c176;
+  height: 80px;
+  width: 100%;
+}
+
+.yellow-cart-num {
+  display: inline;
+  margin-left: 4px;
+  background-color: yellow;
+  padding: 5px;
+ 
+  border-radius: 50%;
+}
+
+.svg-cart {
+  margin-left: 20px;
+}
+
+.anchor-cart {
+  color: black;
+}
+
+.cart-btn {
+  border: none;
+}
+.nav-line-a {
+  background-color: #2d794b;
+  height: 50px;
+  width: 100%;
+  margin-top: 80px;
+}
+
+.center-nav-a {
+  width: 80%;
+  margin: auto;
+  text-align: center;
+}
+
+.link-nav-login {
+  text-decoration: none;
+  color: white;
+  font-weight: 800;
+}
+
+.btn-login-nav {
+  border: none;
+  width: 80%;
+}
+
+.username-nav {
+  margin-right: 250px;
+  height: fit-content;
+  /* background-color: transparent; */
+  background-color: #6ce49c;
+  margin-top: 10px;
+  border-radius: 40px;
+  border: none;
+  width: fit-content;
+  text-decoration: none;
+}
+
+.user-display {
+  color: black;
+}
+@media only screen and (max-width: 768px) {
+  .username-nav {
+    display: none;
+  }
+}

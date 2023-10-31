@@ -7,3 +7,30 @@
   .footer {
     margin-top: auto; /* Push the footer to the bottom  */
   } 
+
+  .social-div {
+    display: inline;
+    margin-left: 50px;
+  }
+
+  .git-a-div{
+    display: inline;
+    margin: 10px;
+    margin-right: 50px;
+  }
+
+  .git-a {
+    display: inlines;
+    text-decoration: none;
+    color: white;
+  }
+
+  .insta-div {
+    display: inline;
+    margin: 10px;
+  }
+
+  .insta-un{
+    text-decoration: none;
+    margin: 5px;
+  }

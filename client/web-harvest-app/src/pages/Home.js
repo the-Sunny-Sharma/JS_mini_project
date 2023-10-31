@@ -1,13 +1,14 @@
 import "../styles/home.css";
-import Navbar from "../components/Navbar";
+// import Navbar from "../components/Navbar";
 import HCards from "./HCards";
 import Footer from "../components/Footer";
 import Slideshow from "../components/Slideshow";
+import Navbarv2 from "../components/Navbarv2";
 
 export default function Home() {
   return (
     <div className="wrapper" style={{ minHeight: '100vh' }}>
-      <Navbar />
+      <Navbarv2 />
       <div className="main-home">
         {/* Your content here */}
         <div className="nav-section">

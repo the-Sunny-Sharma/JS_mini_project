@@ -1,7 +1,8 @@
-import Navbar from "../components/Navbar";
+// import Navbar from "../components/Navbar";
 import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "../styles/logout.css";
+import Navbarv2 from "../components/Navbarv2";
 
 export default function Logout() {
   const navigate = useNavigate();
@@ -20,7 +21,7 @@ export default function Logout() {
 
   return (
     <>
-      <Navbar />
+      <Navbarv2 />
       <div className="user-out--container">
         <div className="l-form-logout">
           <h2 className="head-lo">Are you sure you want to logout?</h2>

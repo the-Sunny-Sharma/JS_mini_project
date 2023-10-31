@@ -8,6 +8,7 @@ input[type="number"]::-webkit-outer-spin-button {
 input[type="number"] {
   -moz-appearance: textfield; /* Firefox */
 }
+
 .h2{
     color: rgb(29, 106, 80);
     margin:0 auto;
@@ -49,3 +50,70 @@ input[type="number"] {
 .f-des{
   padding: 5px;
 }
+
+.main-add-pr {
+  margin-top: 130px;
+  padding: 50px;
+}
+
+.title-add {
+  font-size: 1.3em;
+  text-align: center;
+  font-family: monospace;
+}
+
+.add-prod-container {
+  background-image: linear-gradient(#30bcdb,#1b7eda,#138a9a, #363cef);
+}
+
+.desc-addpr {
+  display: inline;
+}
+
+.textarea-add {
+  display: inline;
+  resize: none;
+}
+
+.row-add {
+  margin: 10px;
+
+}
+.add-pr-form {
+  padding: 20px;
+  width: 50%;
+  background-color: aliceblue;
+  margin: auto;
+  
+}
+
+@media only screen and (max-width: 800px){
+  .add-pr-form {
+    width: 80%;
+  }
+}
+ .btn-add-pr {
+  display: inline;
+  margin: 20px;
+  /* width: 100%; */
+ }
+
+ .clr-add-pr {
+  background-color: yellow;
+  color: rgb(24, 26, 34);
+  font-weight: 700;
+  padding: 10px;
+ }
+
+ .save-add-pr {
+  background-color: #07ff39;
+  color: rgb(24, 26, 34);
+  font-weight: 700;
+  padding: 10px;
+ }
+
+ .center-btn {
+  width: 100%;
+  margin: auto;
+ }
+
