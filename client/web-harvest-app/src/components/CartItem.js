@@ -9,6 +9,14 @@ export default function CardItem() {
   const [data, setData] = useState([]);
   const [totalPrice, setTotalPrice] = useState(0);
   const navigate = useNavigate();
+
+  const [un, setUn] = useState("");
+  useEffect(() => {
+    let un = localStorage.getItem("un");
+    if (un == null) navigate("/login");
+    else setUn(un);
+  }, []);
+
   useEffect(() => {
     let url = "http://localhost:9000/getProdToCart";
     axios
@@ -25,7 +33,7 @@ export default function CardItem() {
   const checkout = () => {
     localStorage.setItem('NoItems', data.length);
     localStorage.setItem('TotalBill', totalPrice);
-    navigate("/checkout");
+    navigate("/checkpay");
   }
 
   const delProdFromCart = (prodId) => {

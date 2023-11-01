@@ -69,6 +69,7 @@ export default function CheckoutAddress() {
     <>
       <NavbarCheckout />
       <div className="co-add-wrapper">
+        <h2>Address</h2>
         <div onChange={handleRadioChange}>
           <label>
             <input
@@ -172,7 +173,7 @@ export default function CheckoutAddress() {
           </diV>
         )}
 
-        <button onClick={(e) => nav('/')}>NEXT</button>
+        <button onClick={(e) => nav('/ordersummary')}>NEXT</button>
       </div>
     </>
   );
