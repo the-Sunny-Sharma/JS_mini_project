@@ -1,0 +1,68 @@
+.co-add-title {
+    margin-top: 200px;
+    font-size: 2.4em;
+    text-align: center;
+}
+
+.co-label {
+    font-size: 1.5em;
+    margin: 5px;
+    margin-left: 20px;
+}
+
+.co-radio-option {
+    width: 50%;
+    margin: auto;
+    border: 2px solid rgb(115, 199, 115);
+    border-radius: 25px;
+    box-shadow: 5px 5px 5px #29d935;
+}
+
+.co-map {
+    width: fit-content;
+    margin: auto;
+    margin-top: 40px;
+}
+
+.co-loc {
+    text-align: center;
+    margin-top: 10px;
+    color: rgb(56, 16, 230);
+}
+
+.next-btn {
+    margin-top: 50px;
+    color: rgb(13, 90, 10);
+    font-size: 2em;
+    font-weight: 700;
+    width: 100%;
+    background-color: #87d38c;
+}
+
+.next-fake-btn {
+    cursor: none;
+    background-color: #6aa36e;
+}
+
+.co-add-form {
+
+}
+
+.co-btn-save {
+    width: 120px;
+    margin: 20px;
+    font-size: 1.4em;
+}
+
+.co-btn-clear {
+    background-color: rgb(224, 77, 77);
+    font-size: 1.4em;
+    color: white;
+    margin: 20px;
+    width: 120px;
+}
+
+.co-input {
+    border-radius: 5px;
+    width: 350px;
+}
