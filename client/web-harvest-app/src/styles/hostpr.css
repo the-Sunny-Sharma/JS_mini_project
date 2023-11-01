@@ -9,6 +9,48 @@ input[type="number"] {
   -moz-appearance: textfield; /* Firefox */
 }
 
+.h2{
+    color: rgb(29, 106, 80);
+    margin:0 auto;
+    width: max-content;
+    padding: 10px;
+}
+.main-form{
+  margin: 0 auto;
+  background-color: blue;
+  height: fit-content;
+  width: max-content;
+  padding: 20px;
+  background-color:rgb(255, 253, 253);
+}
+.full-page{
+  background-color:rgb(226, 219, 219);
+}
+.p-name{
+  padding: 10px;
+  font-size: 1.2rem;
+}
+.name-ex{
+  padding: 5px;
+  display: inline;
+  
+}
+.des{
+  display: inline;
+}
+.des-in{
+  font-size: 1.2rem;
+
+  
+}
+.main-d {
+  height: 25px;
+  padding: 5px;
+}
+.f-des{
+  padding: 5px;
+}
+
 .main-add-pr {
   margin-top: 130px;
   padding: 50px;
@@ -74,3 +116,4 @@ input[type="number"] {
   width: 100%;
   margin: auto;
  }
+
