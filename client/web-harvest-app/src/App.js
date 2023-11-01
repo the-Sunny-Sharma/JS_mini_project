@@ -19,6 +19,8 @@ import AddToCart from './pages/AddToCart';
 import Checkout from './pages/Checkout';
 import ProductPage from './pages/ProductPage';
 import CheckoutAddress from './pages/CheckoutAddress';
+import CheckoutSummary from './pages/CheckoutSummary';
+import CheckoutPayment from './pages/CheckoutPayment';
 
 function App() {
   return (
@@ -42,6 +44,8 @@ function App() {
         <Route path='/checkout' element={<Checkout/>}/>
         <Route path='/checkpay' element={<CheckoutAddress/>}/>
         <Route path='/productpage' element={<ProductPage/>} />
+        <Route path='/ordersummary' element={<CheckoutSummary/>} />
+        <Route path='/payment' element={<CheckoutPayment/>} />
         <Route path='*' element={<Page404/>}/>
       </Routes>
       
