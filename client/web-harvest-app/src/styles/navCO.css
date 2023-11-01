@@ -1,11 +1,10 @@
 .nav-checkout-status {
     background-color: #9CFC97;
-    height: 100px;
-    margin-top: 80px;
+    height: 180px;
+    width: 100%;
 }
 
 .circle-num {
-    /* display: inline; */
     font-size: 1.4rem;
 }
 
@@ -16,6 +15,11 @@
     z-index: 1;
     top: 90px;
     overflow-x: hidden;
+}
+
+.nav-checkout-status {
+    top: 0;
+    position: fixed;
 }
 
 .co-split-left {
